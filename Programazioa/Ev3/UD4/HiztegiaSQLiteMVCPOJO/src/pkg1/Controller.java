@@ -31,7 +31,7 @@ public class Controller implements ActionListener {
         //GUIaren konponente guztiei gehitu listenerra
         view.JButtonTxertatu.addActionListener(listener);
         view.JButtonImprimatu.addActionListener(listener);
-        
+        view.JButtonSalir.addActionListener(listener);
         //view.JButtonSalir.addActionListener(listener);
         
     }
@@ -52,13 +52,18 @@ public class Controller implements ActionListener {
                 
             case "GEHITU":
                 System.out.println("'GEHITU' botoia sakatu duzu. ");
-                Terminoa t1 = new Terminoa(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
+                Terminoa t1 = new Terminoa(view.JTextFieldHitzaEus.getText(), view.JTextFieldHitzaGaz.getText());
                 
                 model.terminoaGehitu(t1);
                 //model.terminoaGehitu(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
                 model.terminoakImprimatu();
-            case "IRTEN":
                 
+            case "HIZTEGIA IMPRIMATU":
+                System.out.println("a");
+                break;
+                
+            case "IRTEN":
+                view.dispose();
         }
     }
     
