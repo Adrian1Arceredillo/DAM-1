@@ -75,15 +75,14 @@ public class Model {
     }
     
     public void terminoaGehitu2(Terminoa t) {
-        String sql = "INSERT INTO Terminoak(id, euskaraz,gazteleraz) VALUES(?,?,?)";
+        String sql = "INSERT INTO Terminoak(euskaraz,gazteleraz) VALUES(?,?)";
 
         try (Connection conn = this.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             //las siguientes 2 sentencias sustituyen los "?" por los parámetros de entrada que recibe el método
             
-            pstmt.setString(1, t.getEuskara());
-            pstmt.setString(2, t.getEuskara());   
-            pstmt.setString(3, t.getGaztelera());
+            pstmt.setString(1, t.getEuskara());   
+            pstmt.setString(2, t.getGaztelera());
             /*
             pstmt.setString(1, euskaraz);   
             pstmt.setString(2, gazteleraz);

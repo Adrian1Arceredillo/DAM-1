@@ -42,7 +42,9 @@ public class Controller implements ActionListener {
         switch (actionCommand) {
             case "TXERTATU":
                 System.out.println("TXERTATU botoia sakatu duzu. ");
-                model.terminoaGehitu(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
+                Terminoa t1 = new Terminoa(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
+                model.terminoaGehitu2(t1);
+                //model.terminoaGehitu(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
                 model.terminoakImprimatu();
         }
     }

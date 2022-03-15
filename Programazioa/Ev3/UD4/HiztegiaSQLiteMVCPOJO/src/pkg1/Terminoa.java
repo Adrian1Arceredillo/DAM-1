@@ -16,17 +16,17 @@ public class Terminoa {
     
     private final String DB = "db/Hiztegia.db";
     
-    private int id;
+    //private int id;
     private String euskara;
     private String gaztelera;
 
-    public Terminoa(int id, String euskara, String gaztelera) {
-        this.id = id;
+    public Terminoa(/*int id,*/ String euskara, String gaztelera) {
+        //this.id = id;
         this.euskara = euskara;
         this.gaztelera = gaztelera;
 
     }
-
+    /*
     public int getId() {
         return id;
     }
@@ -34,7 +34,7 @@ public class Terminoa {
     public void setId(int id) {
         this.id = id;
     }
-    
+    */
     public String getEuskara() {
         return euskara;
     }
