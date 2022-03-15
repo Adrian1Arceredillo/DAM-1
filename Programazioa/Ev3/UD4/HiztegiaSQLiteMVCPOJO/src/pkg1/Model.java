@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -47,7 +49,8 @@ public class Model {
             System.out.println("\n\t" + DB + " datubasearen datuak: ");
             System.out.println("\t================================");
             while (rs.next()) {
-                System.out.println("\t" + rs.getInt("id") +  "\t" + 
+                System.out.println("\t" + (numRegistros + 1) +  "\t" + 
+                               //"\t" + (numRegistros + 1) +  "\t" + 
                                rs.getString("euskaraz") + "\t\t" +
                                rs.getString("gazteleraz"));
                 ++numRegistros;
@@ -76,14 +79,15 @@ public class Model {
     */
     
     public void terminoaGehitu(Terminoa t) {
-        String sql = "INSERT INTO Terminoak(euskaraz,gazteleraz) VALUES(?,?)";
+        String sql = "INSERT INTO Terminoak(id, euskaraz,gazteleraz) VALUES(?,?,?)";
 
         try (Connection conn = this.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             //las siguientes 2 sentencias sustituyen los "?" por los parámetros de entrada que recibe el método
             
-            pstmt.setString(1, t.getEuskara());   
-            pstmt.setString(2, t.getGaztelera());
+            pstmt.setInt(1, t.getId());   
+            pstmt.setString(2, t.getEuskara());   
+            pstmt.setString(3, t.getGaztelera());
             /*
             pstmt.setString(1, euskaraz);   
             pstmt.setString(2, gazteleraz);
@@ -147,6 +151,26 @@ public class Model {
         }
     }
     
+    
+    public String verRegistrosTodos() {
+        
+        ArrayList<Terminoa> regTerminoak = new ArrayList<>();
+        String taula = "Terminoak";
+        String sql = "SELECT * FROM " + taula;
+        
+        try (Connection conn = connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                Terminoa iz = new Terminoa(rs.getInt("id"), rs.getString("euskaraz"), rs.getString("gazteleraz"));
+                regTerminoak.add(iz);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return regTerminoak.toString();
+        
+    }
     
 }
 

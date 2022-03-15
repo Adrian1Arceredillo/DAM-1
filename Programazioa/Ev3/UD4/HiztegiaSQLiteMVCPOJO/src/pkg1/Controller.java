@@ -5,8 +5,10 @@
  */
 package pkg1;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static pkg1.View.*;
 //import model.Model;
 
 
@@ -29,11 +31,14 @@ public class Controller implements ActionListener {
     
     private void gehituActionListener(ActionListener listener) {
         //GUIaren konponente guztiei gehitu listenerra
-        view.JButtonTxertatu.addActionListener(listener);
-        view.JButtonImprimatu.addActionListener(listener);
-        view.JButtonSalir.addActionListener(listener);
-        //view.JButtonSalir.addActionListener(listener);
+        view.JButtonTxertatu.addActionListener(listener);   //JFrame principal
+        view.JButtonImprimatu.addActionListener(listener);  //JFrame principal
+        view.JButtonSalir.addActionListener(listener);      //JFrame principal
+        view.JButtonHitzBakarra.addActionListener(listener);//JFrame principal
+        view.JButtonUserGehitu.addActionListener(listener); //JDialog
+        view.JButtonItzuli.addActionListener(listener);     //JDialog
         
+        //view.JButtonSalir.addActionListener(listener);
     }
     
     
@@ -46,24 +51,48 @@ public class Controller implements ActionListener {
                 System.out.println("Has pulsado el botón 'TXERTATU'");
                 view.JDialogTerminoaGehitu.setVisible(true);
                 view.JDialogTerminoaGehitu.setTitle("HITZA GEHITU");
-                view.JDialogTerminoaGehitu.setSize(360, 300);
+                view.JDialogTerminoaGehitu.setSize(370, 300);
                 //view.JDialogTerminoaGehitu.repaint();
                 break;
-                
-            case "GEHITU":
-                System.out.println("'GEHITU' botoia sakatu duzu. ");
-                Terminoa t1 = new Terminoa(view.JTextFieldHitzaEus.getText(), view.JTextFieldHitzaGaz.getText());
-                
-                model.terminoaGehitu(t1);
-                //model.terminoaGehitu(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
+            
+            case "HIZTEGIA IMPRIMATU":
+                //JTextAreaHiztegiaIkusi.setEnabled(true);
+                JTextAreaHiztegiaIkusi.setText("a");
+                //JTextAreaHiztegiaIkusi.setEnabled(false);
+                JTextAreaHiztegiaIkusi.setEnabled(true);
+                JTextAreaHiztegiaIkusi.setEditable(false);
+                JTextAreaHiztegiaIkusi.setSelectedTextColor(Color.RED);
                 model.terminoakImprimatu();
                 
-            case "HIZTEGIA IMPRIMATU":
-                System.out.println("a");
+                JTextAreaHiztegiaIkusi.setText(model.verRegistrosTodos());
+                //System.out.println(model.verRegistrosTodos());
                 break;
+            
+            case "GEHITU":
+                System.out.println("'GEHITU' botoia sakatu duzu. ");
+                //Terminoa t1 = new Terminoa(view.JTextFieldHitzaEus.getText(), view.JTextFieldHitzaGaz.getText());
+                Terminoa t1 = new Terminoa(Integer.valueOf(view.JTextFieldId.getText()), view.JTextFieldHitzaEus.getText(), view.JTextFieldHitzaGaz.getText());
+                view.JTextFieldHitzaEus.setText("");
+                view.JTextFieldHitzaGaz.setText("");
+                view.JTextFieldId.setText("");
+                model.terminoaGehitu(t1);
                 
+                break;
+            
+            case "ITZULI":
+                view.JDialogTerminoaGehitu.dispose();
+                break;
+            
             case "IRTEN":
+                //JTextAreaHiztegiaIkusi.setEnabled(true);
                 view.dispose();
+                break;
+            
+            case "Hitz hau bakarrik":
+                //JTextFieldEusUser.setEnabled(true);
+                //JTextFieldGazUser.setEnabled(true);
+                break;
+            
         }
     }
     

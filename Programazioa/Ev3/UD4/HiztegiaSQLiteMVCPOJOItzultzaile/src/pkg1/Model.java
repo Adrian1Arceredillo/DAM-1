@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -75,15 +76,14 @@ public class Model {
     }
     
     public void terminoaGehitu2(Terminoa t) {
-        String sql = "INSERT INTO Terminoak(id, euskaraz,gazteleraz) VALUES(?,?,?)";
+        String sql = "INSERT INTO Terminoak(euskaraz,gazteleraz) VALUES(?,?)";
 
         try (Connection conn = this.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             //las siguientes 2 sentencias sustituyen los "?" por los parámetros de entrada que recibe el método
             
-            pstmt.setString(1, t.getEuskara());
-            pstmt.setString(2, t.getEuskara());   
-            pstmt.setString(3, t.getGaztelera());
+            pstmt.setString(1, t.getEuskara());   
+            pstmt.setString(2, t.getGaztelera());
             /*
             pstmt.setString(1, euskaraz);   
             pstmt.setString(2, gazteleraz);
@@ -148,5 +148,67 @@ public class Model {
     }
     
     
+    public String verRegistrosTodos() {
+        
+        ArrayList<Terminoa> regTerminoak = new ArrayList<>();
+        String taula = "Terminoak";
+        String sql = "SELECT * FROM " + taula;
+        
+        try (Connection conn = connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                //Terminoa iz = new Terminoa(rs.getInt("id"), rs.getString("euskaraz"), rs.getString("gazteleraz"));
+                Terminoa iz = new Terminoa(rs.getString("euskaraz"), rs.getString("gazteleraz"));
+                regTerminoak.add(iz);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return regTerminoak.toString();
+        
+    }
+    
+    
+    public String traducirPalabra(String euskara) {
+        String sql = "SELECT gazteleraz FROM Terminoak WHERE euskaraz = ? LIMIT 1";     //buscar la forma de devolver SOLO EL PRIMERO que cumpla las condiciones
+        String strBuscado = "no encontrado";
+        
+        try (Connection conn = this.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // set the corresponding param
+            pstmt.setString(1, euskara);
+            // update 
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                strBuscado = rs.getString("gazteleraz");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        
+        return strBuscado;
+    }
+    
+    
+    /*
+    public ProduktuenTableModelaJFrame() {
+        initComponents();
+        String[][] produktuak = {{"J01","Ogia","1.5"},{"J02","Esnea","1.05"},{"J03","Madalenak","2.25"},{"J04","Mermelada","3.0"}};
+        String[] zutabeak = {"A","B","C"};
+        for (int i = 0; i < JTableProduktuenTaula.getColumnCount(); i++) {
+            JTableProduktuenTaula.getColumnModel().getColumn(i).setHeaderValue(zutabeak[i]);
+        }
+        
+        for (int i = 0; i < produktuak.length; ++i) {
+            for (int j = 0; j < produktuak[i].length; ++j) {
+                
+                JTableProduktuenTaula.setValueAt(produktuak[i][j], i, j);
+            }
+        }
+        
+    }
+    */
 }
 
