@@ -59,8 +59,8 @@ public class Model {
         }
     }
     
-    
-    public void terminoaGehitu(String euskaraz, String gazteleraz) {
+    /*
+    public void terminoaGehitu2(String euskaraz, String gazteleraz) {
         String sql = "INSERT INTO Terminoak(euskaraz,gazteleraz) VALUES(?,?)";
 
         try (Connection conn = this.connect();
@@ -73,8 +73,9 @@ public class Model {
             System.out.println(e.getMessage());
         }
     }
+    */
     
-    public void terminoaGehitu2(Terminoa t) {
+    public void terminoaGehitu(Terminoa t) {
         String sql = "INSERT INTO Terminoak(euskaraz,gazteleraz) VALUES(?,?)";
 
         try (Connection conn = this.connect();

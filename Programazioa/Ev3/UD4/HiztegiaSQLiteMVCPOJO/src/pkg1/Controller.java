@@ -30,6 +30,8 @@ public class Controller implements ActionListener {
     private void gehituActionListener(ActionListener listener) {
         //GUIaren konponente guztiei gehitu listenerra
         view.JButtonTxertatu.addActionListener(listener);
+        view.JButtonImprimatu.addActionListener(listener);
+        
         //view.JButtonSalir.addActionListener(listener);
         
     }
@@ -40,12 +42,30 @@ public class Controller implements ActionListener {
         String actionCommand = e.getActionCommand();
         //listenerrak entzun dezakeen eragiketa bakoitzeko. Konponenteek 'actionCommad' propietatea daukate
         switch (actionCommand) {
-            case "TXERTATU":
+            case "TERMINOA GEHITU":
+                
+                System.out.println("Has pulsado el botón 'TXERTATU'");
+                view.JDialogTerminoaGehitu.setVisible(true);
+                view.JDialogTerminoaGehitu.repaint();
+                break;
+                
+                /*
                 System.out.println("TXERTATU botoia sakatu duzu. ");
                 Terminoa t1 = new Terminoa(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
-                model.terminoaGehitu2(t1);
+                
+                model.terminoaGehitu(t1);
                 //model.terminoaGehitu(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
                 model.terminoakImprimatu();
+                */
+            case "GEHITU":
+                System.out.println("'GEHITU' botoia sakatu duzu. ");
+                Terminoa t1 = new Terminoa(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
+                
+                model.terminoaGehitu(t1);
+                //model.terminoaGehitu(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
+                model.terminoakImprimatu();
+            case "IRTEN":
+                
         }
     }
     

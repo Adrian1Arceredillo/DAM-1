@@ -43,6 +43,13 @@ public class View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JDialogTerminoaGehitu = new javax.swing.JDialog();
+        JLabelUserEus = new javax.swing.JLabel();
+        JLabelUserGaz = new javax.swing.JLabel();
+        JTextFieldHitzaEus = new javax.swing.JTextField();
+        JTextFieldHitzaGaz = new javax.swing.JTextField();
+        JButtonUserGehitu = new javax.swing.JButton();
+        JButtonItzuli = new javax.swing.JButton();
         JLabelTitulo = new javax.swing.JLabel();
         JLabelEuskaraz = new javax.swing.JLabel();
         JLabelGazteleraz = new javax.swing.JLabel();
@@ -50,6 +57,56 @@ public class View extends javax.swing.JFrame {
         JTextFieldGazUser = new javax.swing.JTextField();
         JButtonTxertatu = new javax.swing.JButton();
         JButtonSalir = new javax.swing.JButton();
+        JButtonImprimatu = new javax.swing.JButton();
+
+        JLabelUserEus.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        JLabelUserEus.setText("Euskaraz:");
+
+        JLabelUserGaz.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        JLabelUserGaz.setText("Gazteleraz:");
+
+        JButtonUserGehitu.setText("GEHITU");
+
+        JButtonItzuli.setText("ITZULI");
+
+        javax.swing.GroupLayout JDialogTerminoaGehituLayout = new javax.swing.GroupLayout(JDialogTerminoaGehitu.getContentPane());
+        JDialogTerminoaGehitu.getContentPane().setLayout(JDialogTerminoaGehituLayout);
+        JDialogTerminoaGehituLayout.setHorizontalGroup(
+            JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JDialogTerminoaGehituLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(JDialogTerminoaGehituLayout.createSequentialGroup()
+                        .addComponent(JButtonUserGehitu, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JButtonItzuli, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
+                    .addGroup(JDialogTerminoaGehituLayout.createSequentialGroup()
+                        .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JLabelUserGaz)
+                            .addComponent(JLabelUserEus))
+                        .addGap(18, 18, 18)
+                        .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JTextFieldHitzaEus)
+                            .addComponent(JTextFieldHitzaGaz, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        JDialogTerminoaGehituLayout.setVerticalGroup(
+            JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JDialogTerminoaGehituLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelUserEus)
+                    .addComponent(JTextFieldHitzaEus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelUserGaz)
+                    .addComponent(JTextFieldHitzaGaz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JButtonUserGehitu)
+                    .addComponent(JButtonItzuli))
+                .addGap(66, 66, 66))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,9 +119,17 @@ public class View extends javax.swing.JFrame {
         JLabelGazteleraz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         JLabelGazteleraz.setText("Gazteleraz:");
 
-        JButtonTxertatu.setText("TXERTATU");
+        JButtonTxertatu.setText("TERMINOA GEHITU");
+        JButtonTxertatu.setActionCommand("TERMINOA GEHITU");
+        JButtonTxertatu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonTxertatuActionPerformed(evt);
+            }
+        });
 
         JButtonSalir.setText("IRTEN");
+
+        JButtonImprimatu.setText("HIZTEGIA IMPRIMATU");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,9 +153,12 @@ public class View extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(JButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(JButtonTxertatu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JButtonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(JButtonImprimatu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(2, 2, 2)))
                 .addGap(62, 62, 62))
         );
         layout.setVerticalGroup(
@@ -109,12 +177,19 @@ public class View extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(JButtonTxertatu)
                 .addGap(18, 18, 18)
+                .addComponent(JButtonImprimatu)
+                .addGap(18, 18, 18)
                 .addComponent(JButtonSalir)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JButtonTxertatuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonTxertatuActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_JButtonTxertatuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,12 +227,20 @@ public class View extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JButton JButtonImprimatu;
+    public static javax.swing.JButton JButtonItzuli;
     static javax.swing.JButton JButtonSalir;
     static javax.swing.JButton JButtonTxertatu;
+    public static javax.swing.JButton JButtonUserGehitu;
+    public static javax.swing.JDialog JDialogTerminoaGehitu;
     private javax.swing.JLabel JLabelEuskaraz;
     public static javax.swing.JLabel JLabelGazteleraz;
     private javax.swing.JLabel JLabelTitulo;
+    public static javax.swing.JLabel JLabelUserEus;
+    public static javax.swing.JLabel JLabelUserGaz;
     public static javax.swing.JTextField JTextFieldEusUser;
     public static javax.swing.JTextField JTextFieldGazUser;
+    public static javax.swing.JTextField JTextFieldHitzaEus;
+    public static javax.swing.JTextField JTextFieldHitzaGaz;
     // End of variables declaration//GEN-END:variables
 }
