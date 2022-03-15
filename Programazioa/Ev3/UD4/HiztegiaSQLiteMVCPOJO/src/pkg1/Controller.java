@@ -43,20 +43,13 @@ public class Controller implements ActionListener {
         //listenerrak entzun dezakeen eragiketa bakoitzeko. Konponenteek 'actionCommad' propietatea daukate
         switch (actionCommand) {
             case "TERMINOA GEHITU":
-                
                 System.out.println("Has pulsado el botón 'TXERTATU'");
                 view.JDialogTerminoaGehitu.setVisible(true);
-                view.JDialogTerminoaGehitu.repaint();
+                view.JDialogTerminoaGehitu.setTitle("HITZA GEHITU");
+                view.JDialogTerminoaGehitu.setSize(360, 300);
+                //view.JDialogTerminoaGehitu.repaint();
                 break;
                 
-                /*
-                System.out.println("TXERTATU botoia sakatu duzu. ");
-                Terminoa t1 = new Terminoa(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
-                
-                model.terminoaGehitu(t1);
-                //model.terminoaGehitu(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());
-                model.terminoakImprimatu();
-                */
             case "GEHITU":
                 System.out.println("'GEHITU' botoia sakatu duzu. ");
                 Terminoa t1 = new Terminoa(view.JTextFieldEusUser.getText(), view.JTextFieldGazUser.getText());

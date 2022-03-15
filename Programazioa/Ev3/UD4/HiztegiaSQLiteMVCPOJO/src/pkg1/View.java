@@ -59,6 +59,8 @@ public class View extends javax.swing.JFrame {
         JButtonSalir = new javax.swing.JButton();
         JButtonImprimatu = new javax.swing.JButton();
 
+        JDialogTerminoaGehitu.setSize(new java.awt.Dimension(300, 300));
+
         JLabelUserEus.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         JLabelUserEus.setText("Euskaraz:");
 
