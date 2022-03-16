@@ -92,7 +92,7 @@ public class Controller implements ActionListener {
                 model.terminoaGehitu2(t1);
                 break;
             
-            case "ITZULI":
+            case "ATZERA":
                 view.JDialogTerminoaGehitu.dispose();
                 break;
             
@@ -106,10 +106,11 @@ public class Controller implements ActionListener {
                 //JTextFieldGazUser.setEnabled(true);
                 break;
             
-            case "TRADUCIR":
+            case "ITZULI":
                 //JTextFieldGazUser
                 String enEuskera = JTextFieldEusUser.getText();
                 System.out.println(model.traducirPalabra(enEuskera));
+                JTextFieldEusUser.setText("");
                 
                 view.JTextFieldGazUser.setText(model.traducirPalabra(enEuskera));
                 //view.JTextFieldGazUser.setText(palabraTraducida);

@@ -51,7 +51,7 @@ public class Controller implements ActionListener {
                 System.out.println("Has pulsado el botón 'TXERTATU'");
                 view.JDialogTerminoaGehitu.setVisible(true);
                 view.JDialogTerminoaGehitu.setTitle("HITZA GEHITU");
-                view.JDialogTerminoaGehitu.setSize(370, 300);
+                view.JDialogTerminoaGehitu.setSize(370, 250);
                 //view.JDialogTerminoaGehitu.repaint();
                 break;
             

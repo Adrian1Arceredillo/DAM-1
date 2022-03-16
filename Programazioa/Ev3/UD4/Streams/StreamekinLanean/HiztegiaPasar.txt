@@ -1,0 +1,3 @@
+id: 1, Euskaraz: sagarra, Gazteleraz: manzana
+id: 2, Euskaraz: madaria, Gazteleraz: pera
+id: 3, Euskaraz: marrubia, Gazteleraz: fresa

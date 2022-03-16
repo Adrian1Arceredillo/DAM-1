@@ -112,7 +112,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="JButtonItzuli">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ITZULI"/>
+            <Property name="text" type="java.lang.String" value="ATZERA"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -380,7 +380,6 @@
     <Component class="javax.swing.JButton" name="JButtonTraducir">
       <Properties>
         <Property name="text" type="java.lang.String" value="ITZULI"/>
-        <Property name="actionCommand" type="java.lang.String" value="TRADUCIR"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>

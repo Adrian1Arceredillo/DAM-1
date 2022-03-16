@@ -26,12 +26,14 @@ public class CopyBytes {
             int c;
             int kont = 0;
             
-            while ((c = in.read()) != -1) {     //condición: si no ha llegado al final del fichero, seguir pasando info
+            //condición: si no ha llegado al final del fichero, seguir pasando info
+            while ((c = in.read()) != -1) {     
                 out.write(c);
             }
             
             /*
-            while (((c = in.read()) != -1) && (kont < 10000)) {     //condición: si no ha llegado al final del fichero, y kont es menor que 10000 (cada "kont" = bit), seguir pasando info
+            //condición: si no ha llegado al final del fichero, y kont es menor que 10000 (cada "kont" = bit), seguir pasando info
+            while (((c = in.read()) != -1) && (kont < 10000)) {     
                 out.write(c);
                 ++kont;
             }

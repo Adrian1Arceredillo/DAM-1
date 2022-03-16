@@ -1,0 +1,5 @@
+Este archivo se va a usar para buscar un 
+carácter concreto y sustituirlo por otro.
+
+Por ejemplo, se va a cambiar la letra "a" 
+por la letra "b".

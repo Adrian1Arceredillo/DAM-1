@@ -7,26 +7,27 @@ package pruebas;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.io.IOException;
 
 /**
  *
- * @author arceredillo.adrian
+ * @author AdriAlex
  */
-
-public class CopyCharacters {
+public class CopyLines {
     public static void main(String[] args) throws IOException {
 
-        FileReader inputStream = null;
-        FileWriter outputStream = null;
+        BufferedReader inputStream = null;
+        PrintWriter outputStream = null;
 
         try {
-            inputStream = new FileReader("charOriginal.txt");
-            outputStream = new FileWriter("charCopia.txt");
+            inputStream = new BufferedReader(new FileReader("../StreamekinLanean/linesOriginal.txt"));
+            outputStream = new PrintWriter(new FileWriter("../StreamekinLanean/linesCopia.txt"));
 
-            int c;
-            while ((c = inputStream.read()) != -1) {
-                outputStream.write(c);
+            String l;
+            while ((l = inputStream.readLine()) != null) {
+                outputStream.println(l);
             }
         } finally {
             if (inputStream != null) {

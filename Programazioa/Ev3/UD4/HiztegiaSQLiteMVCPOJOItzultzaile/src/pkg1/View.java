@@ -83,7 +83,7 @@ public class View extends javax.swing.JFrame {
 
         JButtonUserGehitu.setText("GEHITU");
 
-        JButtonItzuli.setText("ITZULI");
+        JButtonItzuli.setText("ATZERA");
 
         JLabelId.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         JLabelId.setText("Id:");
@@ -177,7 +177,6 @@ public class View extends javax.swing.JFrame {
         jScrollPane1.setViewportView(JTextAreaHiztegiaIkusi);
 
         JButtonTraducir.setText("ITZULI");
-        JButtonTraducir.setActionCommand("TRADUCIR");
 
         JButtonRegistrosTable.setText("HIZTEGIA JTABLEAN");
 
