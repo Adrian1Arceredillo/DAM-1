@@ -20,8 +20,8 @@ public class Terminoa {
     private String euskara;
     private String gaztelera;
 
-    public Terminoa(int id, String euskara, String gaztelera) {
-        this.id = id;
+    public Terminoa(String euskara, String gaztelera) {
+        //this.id = 0;
         this.euskara = euskara;
         this.gaztelera = gaztelera;
 
@@ -54,7 +54,7 @@ public class Terminoa {
     @Override
     public String toString() {
 
-        String s = "\nid: " + id + "  \nEuskera : " + euskara + "  \nGaztelera : " + gaztelera + 
+        String s = "\nEuskera : " + euskara + "  \nGaztelera : " + gaztelera + 
                 "\n-----------------------------------------------------------------------\n";
         return s;
     }

@@ -79,15 +79,14 @@ public class Model {
     */
     
     public void terminoaGehitu(Terminoa t) {
-        String sql = "INSERT INTO Terminoak(id, euskaraz,gazteleraz) VALUES(?,?,?)";
+        String sql = "INSERT INTO Terminoak(euskaraz,gazteleraz) VALUES(?,?)";
 
         try (Connection conn = this.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             //las siguientes 2 sentencias sustituyen los "?" por los parámetros de entrada que recibe el método
-            
-            pstmt.setInt(1, t.getId());   
-            pstmt.setString(2, t.getEuskara());   
-            pstmt.setString(3, t.getGaztelera());
+              
+            pstmt.setString(1, t.getEuskara());   
+            pstmt.setString(2, t.getGaztelera());
             /*
             pstmt.setString(1, euskaraz);   
             pstmt.setString(2, gazteleraz);
@@ -162,7 +161,7 @@ public class Model {
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                Terminoa iz = new Terminoa(rs.getInt("id"), rs.getString("euskaraz"), rs.getString("gazteleraz"));
+                Terminoa iz = new Terminoa(rs.getString("euskaraz"), rs.getString("gazteleraz"));
                 regTerminoak.add(iz);
             }
         } catch (Exception ex) {

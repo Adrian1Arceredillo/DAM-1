@@ -55,8 +55,6 @@ public class View extends javax.swing.JFrame {
         JTextFieldHitzaGaz = new javax.swing.JTextField();
         JButtonUserGehitu = new javax.swing.JButton();
         JButtonItzuli = new javax.swing.JButton();
-        JLabelNumId = new javax.swing.JLabel();
-        JTextFieldId = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         JLabelTitulo = new javax.swing.JLabel();
         JLabelEuskaraz = new javax.swing.JLabel();
@@ -71,7 +69,7 @@ public class View extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         JButtonHitzBakarra = new javax.swing.JButton();
 
-        JDialogTerminoaGehitu.setSize(new java.awt.Dimension(300, 300));
+        JDialogTerminoaGehitu.setSize(new java.awt.Dimension(600, 600));
 
         JLabelUserEus.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         JLabelUserEus.setText("Euskaraz:");
@@ -82,9 +80,6 @@ public class View extends javax.swing.JFrame {
         JButtonUserGehitu.setText("GEHITU");
 
         JButtonItzuli.setText("ITZULI");
-
-        JLabelNumId.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        JLabelNumId.setText("Id:");
 
         javax.swing.GroupLayout JDialogTerminoaGehituLayout = new javax.swing.GroupLayout(JDialogTerminoaGehitu.getContentPane());
         JDialogTerminoaGehitu.getContentPane().setLayout(JDialogTerminoaGehituLayout);
@@ -102,23 +97,17 @@ public class View extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JDialogTerminoaGehituLayout.createSequentialGroup()
                             .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(JLabelUserGaz)
-                                .addComponent(JLabelUserEus)
-                                .addComponent(JLabelNumId))
+                                .addComponent(JLabelUserEus))
                             .addGap(18, 18, 18)
                             .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(JTextFieldHitzaGaz, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                                .addComponent(JTextFieldHitzaEus)
-                                .addComponent(JTextFieldId)))))
-                .addContainerGap(98, Short.MAX_VALUE))
+                                .addComponent(JTextFieldHitzaEus)))))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
         JDialogTerminoaGehituLayout.setVerticalGroup(
             JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JDialogTerminoaGehituLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLabelNumId)
-                    .addComponent(JTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(44, 44, 44)
                 .addGroup(JDialogTerminoaGehituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTextFieldHitzaEus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLabelUserEus))
@@ -162,7 +151,6 @@ public class View extends javax.swing.JFrame {
         jScrollPane1.setViewportView(JTextAreaHiztegiaIkusi);
 
         JButtonHitzBakarra.setText("Hitz hau bakarrik");
-        JButtonHitzBakarra.setActionCommand("Hitz hau bakarrik");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -276,7 +264,6 @@ public class View extends javax.swing.JFrame {
     public static javax.swing.JDialog JDialogTerminoaGehitu;
     private javax.swing.JLabel JLabelEuskaraz;
     public static javax.swing.JLabel JLabelGazteleraz;
-    public static javax.swing.JLabel JLabelNumId;
     public static javax.swing.JLabel JLabelTitulo;
     public static javax.swing.JLabel JLabelUserEus;
     public static javax.swing.JLabel JLabelUserGaz;
@@ -285,7 +272,6 @@ public class View extends javax.swing.JFrame {
     public static javax.swing.JTextField JTextFieldGazUser;
     public static javax.swing.JTextField JTextFieldHitzaEus;
     public static javax.swing.JTextField JTextFieldHitzaGaz;
-    public static javax.swing.JTextField JTextFieldId;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

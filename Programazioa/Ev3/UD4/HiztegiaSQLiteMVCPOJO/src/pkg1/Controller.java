@@ -71,10 +71,9 @@ public class Controller implements ActionListener {
             case "GEHITU":
                 System.out.println("'GEHITU' botoia sakatu duzu. ");
                 //Terminoa t1 = new Terminoa(view.JTextFieldHitzaEus.getText(), view.JTextFieldHitzaGaz.getText());
-                Terminoa t1 = new Terminoa(Integer.valueOf(view.JTextFieldId.getText()), view.JTextFieldHitzaEus.getText(), view.JTextFieldHitzaGaz.getText());
+                Terminoa t1 = new Terminoa(view.JTextFieldHitzaEus.getText(), view.JTextFieldHitzaGaz.getText());
                 view.JTextFieldHitzaEus.setText("");
                 view.JTextFieldHitzaGaz.setText("");
-                view.JTextFieldId.setText("");
                 model.terminoaGehitu(t1);
                 
                 break;
@@ -84,11 +83,11 @@ public class Controller implements ActionListener {
                 break;
             
             case "IRTEN":
-                //JTextAreaHiztegiaIkusi.setEnabled(true);
                 view.dispose();
                 break;
             
             case "Hitz hau bakarrik":
+                System.out.println("Momentuz, botoi hau EZ dago erabilgarria! ");
                 //JTextFieldEusUser.setEnabled(true);
                 //JTextFieldGazUser.setEnabled(true);
                 break;

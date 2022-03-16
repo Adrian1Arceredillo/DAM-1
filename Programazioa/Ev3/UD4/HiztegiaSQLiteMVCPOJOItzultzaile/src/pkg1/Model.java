@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
@@ -25,6 +26,20 @@ public class Model {
     private Connection connect() {
         // SQLite connection string
         String url = "jdbc:sqlite:" + DB;
+        //String url = "jdbc:sqlite:" + DB;
+        
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return conn;
+    }
+    
+    private static Connection connect2() {
+        // SQLite connection string
+        String url = "jdbc:sqlite:db/Hiztegia.db";
         //String url = "jdbc:sqlite:" + DB;
         
         Connection conn = null;
@@ -192,23 +207,29 @@ public class Model {
     }
     
     
-    /*
-    public ProduktuenTableModelaJFrame() {
-        initComponents();
-        String[][] produktuak = {{"J01","Ogia","1.5"},{"J02","Esnea","1.05"},{"J03","Madalenak","2.25"},{"J04","Mermelada","3.0"}};
-        String[] zutabeak = {"A","B","C"};
-        for (int i = 0; i < JTableProduktuenTaula.getColumnCount(); i++) {
-            JTableProduktuenTaula.getColumnModel().getColumn(i).setHeaderValue(zutabeak[i]);
-        }
+    public static ArrayList<Terminoa> registrosArrayList() {
+        ArrayList<Terminoa> regTerminoak = new ArrayList<>();
+        String taula = "Terminoak";
+        String sql = "SELECT * FROM " + taula;
         
-        for (int i = 0; i < produktuak.length; ++i) {
-            for (int j = 0; j < produktuak[i].length; ++j) {
-                
-                JTableProduktuenTaula.setValueAt(produktuak[i][j], i, j);
+        try (Connection conn = connect2();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                //Terminoa iz = new Terminoa(rs.getInt("id"), rs.getString("euskaraz"), rs.getString("gazteleraz"));
+                Terminoa iz = new Terminoa(rs.getInt("id"), rs.getString("euskaraz"), rs.getString("gazteleraz"));
+                regTerminoak.add(iz);
             }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
         
+        return regTerminoak;
     }
-    */
-}
+    
+    
+    
+    }
+
+
 

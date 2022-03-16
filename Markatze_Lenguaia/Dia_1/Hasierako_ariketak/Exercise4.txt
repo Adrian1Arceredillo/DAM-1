@@ -1,0 +1,42 @@
+<DOCTYPE html>
+	<html>	
+		<head>
+		
+		<title>Exercise4</title>
+		
+			<style>	
+				
+				h1 {
+					text-align: center;
+					font-size: 24px;
+					font-family:times;					
+				}
+					
+								
+			</style>
+			
+		</head>	
+		
+		
+		<body>
+		
+			<br/>
+			<h1><b>RAZONES PARA CONTINUAR </br>
+			LEYENDO MI LIBRO</b></h1>
+			</hr>
+				
+
+			<ul>
+				<li>El libro me está gustando </li>
+				<li>Estoy aprendiendo más de lo que necesitaba </li>
+				<li>Si ya he llegado hasta aquí, ya no lo dejo </li>
+				<li>No tengo nada mejor que hacer  </li>
+			</ul>  
+
+					
+			
+		</body>
+	
+	</html>
+
+</DOCTYPE html>

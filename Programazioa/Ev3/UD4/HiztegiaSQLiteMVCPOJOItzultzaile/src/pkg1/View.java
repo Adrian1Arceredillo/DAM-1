@@ -56,6 +56,9 @@ public class View extends javax.swing.JFrame {
         JButtonItzuli = new javax.swing.JButton();
         JLabelId = new javax.swing.JLabel();
         JTextFieldId = new javax.swing.JTextField();
+        JDialog2Table = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        JTableRegistros = new javax.swing.JTable();
         JLabelTitulo = new javax.swing.JLabel();
         JLabelEuskaraz = new javax.swing.JLabel();
         JLabelGazteleraz = new javax.swing.JLabel();
@@ -68,6 +71,7 @@ public class View extends javax.swing.JFrame {
         JTextAreaHiztegiaIkusi = new javax.swing.JTextArea();
         jSeparator1 = new javax.swing.JSeparator();
         JButtonTraducir = new javax.swing.JButton();
+        JButtonRegistrosTable = new javax.swing.JButton();
 
         JDialogTerminoaGehitu.setSize(new java.awt.Dimension(300, 300));
 
@@ -129,6 +133,28 @@ public class View extends javax.swing.JFrame {
                 .addGap(29, 29, 29))
         );
 
+        JDialog2Table.setSize(new java.awt.Dimension(300, 300));
+
+        JTableRegistros.setModel(new TerminoenTableModela(Model.registrosArrayList()));
+        jScrollPane2.setViewportView(JTableRegistros);
+
+        javax.swing.GroupLayout JDialog2TableLayout = new javax.swing.GroupLayout(JDialog2Table.getContentPane());
+        JDialog2Table.getContentPane().setLayout(JDialog2TableLayout);
+        JDialog2TableLayout.setHorizontalGroup(
+            JDialog2TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JDialog2TableLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+        JDialog2TableLayout.setVerticalGroup(
+            JDialog2TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JDialog2TableLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         JLabelTitulo.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
@@ -152,6 +178,8 @@ public class View extends javax.swing.JFrame {
 
         JButtonTraducir.setText("ITZULI");
         JButtonTraducir.setActionCommand("TRADUCIR");
+
+        JButtonRegistrosTable.setText("HIZTEGIA JTABLEAN");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -182,9 +210,11 @@ public class View extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JButtonTxertatu, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(JButtonImprimatu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(JButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JButtonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JButtonImprimatu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(JButtonRegistrosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 20, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -211,8 +241,10 @@ public class View extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JButtonTxertatu)
                     .addComponent(JButtonImprimatu)
-                    .addComponent(JButtonSalir))
-                .addContainerGap(64, Short.MAX_VALUE))
+                    .addComponent(JButtonRegistrosTable))
+                .addGap(18, 18, 18)
+                .addComponent(JButtonSalir)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -256,10 +288,12 @@ public class View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JButton JButtonImprimatu;
     public static javax.swing.JButton JButtonItzuli;
+    public static javax.swing.JButton JButtonRegistrosTable;
     public static javax.swing.JButton JButtonSalir;
     public static javax.swing.JButton JButtonTraducir;
     public static javax.swing.JButton JButtonTxertatu;
     public static javax.swing.JButton JButtonUserGehitu;
+    public static javax.swing.JDialog JDialog2Table;
     public static javax.swing.JDialog JDialogTerminoaGehitu;
     private javax.swing.JLabel JLabelEuskaraz;
     public static javax.swing.JLabel JLabelGazteleraz;
@@ -267,6 +301,7 @@ public class View extends javax.swing.JFrame {
     public static javax.swing.JLabel JLabelTitulo;
     public static javax.swing.JLabel JLabelUserEus;
     public static javax.swing.JLabel JLabelUserGaz;
+    public static javax.swing.JTable JTableRegistros;
     public static javax.swing.JTextArea JTextAreaHiztegiaIkusi;
     public static javax.swing.JTextField JTextFieldEusUser;
     public static javax.swing.JTextField JTextFieldGazUser;
@@ -274,6 +309,7 @@ public class View extends javax.swing.JFrame {
     public static javax.swing.JTextField JTextFieldHitzaGaz;
     public static javax.swing.JTextField JTextFieldId;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

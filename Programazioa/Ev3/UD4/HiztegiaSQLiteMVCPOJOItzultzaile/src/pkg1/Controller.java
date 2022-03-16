@@ -35,8 +35,9 @@ public class Controller implements ActionListener {
         view.JButtonImprimatu.addActionListener(listener);  //JFrame principal
         view.JButtonSalir.addActionListener(listener);      //JFrame principal
         view.JButtonTraducir.addActionListener(listener);   //JFrame principal
-        view.JButtonUserGehitu.addActionListener(listener); //JDialog
-        view.JButtonItzuli.addActionListener(listener);     //JDialog
+        view.JButtonUserGehitu.addActionListener(listener); //JDialog 1
+        view.JButtonItzuli.addActionListener(listener);     //JDialog 1
+        view.JButtonRegistrosTable.addActionListener(listener); //JDialog 2 - jtable
         //view.JButtonSalir.addActionListener(listener);
         
     }
@@ -73,6 +74,14 @@ public class Controller implements ActionListener {
                 //System.out.println(model.verRegistrosTodos());
                 break;
             
+            case "HIZTEGIA JTABLEAN":
+                //JDialog2Table.setEnabled(true);
+                view.JDialog2Table.setSize(600, 600);
+                view.JDialog2Table.setVisible(true);
+                view.JDialogTerminoaGehitu.setTitle("HITZA GEHITU");
+                
+                break;
+                
             case "GEHITU":
                 System.out.println("'GEHITU' botoia sakatu duzu. ");
                 Terminoa t1 = new Terminoa(view.JTextFieldHitzaEus.getText(), view.JTextFieldHitzaGaz.getText());
