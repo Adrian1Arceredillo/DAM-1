@@ -30,7 +30,7 @@ public class CopyLines2 {
             
         }
         
-        FileWriter writer = new FileWriter("../StreamekinLanean/linesCopia.txt");
+        FileWriter writer = new FileWriter("../StreamekinLanean/linesCopia1.txt");
         writer.write(fileContent);
         writer.close();
         
