@@ -1,0 +1,11 @@
+Utilizando el token creado:
+
+git status (check what files have been changed)
+git add “name of the file + extensión ” (saves the file from the working area to the staging area) or git add .
+git status again (check the files in green)
+git commit -m "comentario"  (everything in local repository)
+git push –u (everything in the hub)
+git pull (actualizar contenido repositorio/archivo)
+
+
+git push --set-upstream origin main

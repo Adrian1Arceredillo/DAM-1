@@ -1,0 +1,10 @@
+https://docs.oracle.com/javase/tutorial/essential/io/bytestreams.html
+https://docs.oracle.com/javase/10/docs/api/java/io/FileInputStream.html
+
+Buscar y conocer las diferencias entre:
+	- Byte Streams
+	- Character Streams
+	- Buffered Streams
+
+Byte Streams:
+Devuelve cada byte. Si se ha llegado al final del fichero, devolverá -1

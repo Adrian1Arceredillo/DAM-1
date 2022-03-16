@@ -1,0 +1,17 @@
+
+
+3.	Idatzi Python programa bat ondorengo patroia erabiliko duena habiratutako for bukleak erabiliz. (for bat bestearen barruan)
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+
+
+def dibujarMedioRombo():
+	numFilas = int(input("Sartu lerro kopurua: "))
+	

@@ -1,0 +1,4 @@
+Saludo, Presentacion, Despedida
+holabuenos
+dias, como estas
+hoy?
