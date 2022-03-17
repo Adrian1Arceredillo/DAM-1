@@ -95,7 +95,7 @@ public class HiztegiaWithFiles {
         String taula = "Terminoak";
         String sql = "SELECT * FROM " + taula;
         
-        String guardarFile = "../StreamekinLanean/HiztegiaPasar.txt";
+        String guardarFile = "../StreamekinLanean/HiztegiaFromDB.txt";
 
         try (Connection conn = connect2();
                 Statement stmt = conn.createStatement();

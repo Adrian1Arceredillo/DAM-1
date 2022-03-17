@@ -8,5 +8,9 @@ Buscar y conocer las diferencias entre:
 	- Character Streams
 	- Buffered Streams
 
+Buscar qué hace el método:
+	public String[] split(String regex)
+"Split" es un método de la clase String
+
 Byte Streams:
 Devuelve cada byte. Si se ha llegado al final del fichero, devolverá -1

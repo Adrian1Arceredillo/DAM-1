@@ -7,6 +7,10 @@ package pkg1;
 
 //import model.Model;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
+
 /**
  *
  * @author arceredillo.adrian
@@ -21,6 +25,11 @@ public class View extends javax.swing.JFrame {
         this.setTitle("Hiztegia Adrian");
 //        JTextAreaHiztegiaIkusi.setEnabled(false);
         JTextFieldId.setEnabled(false);
+    }
+    
+    public void paint(Graphics draw) {
+        //esto solamente lo utilizaré para darle un nuevo color de fondo al jframe
+        getContentPane().setBackground(new Color(70, 80, 70));
     }
     
     /**
@@ -158,12 +167,15 @@ public class View extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         JLabelTitulo.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        JLabelTitulo.setForeground(new java.awt.Color(153, 255, 153));
         JLabelTitulo.setText("HIZTEGIA");
 
         JLabelEuskaraz.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JLabelEuskaraz.setForeground(new java.awt.Color(153, 255, 153));
         JLabelEuskaraz.setText("Euskaraz:");
 
         JLabelGazteleraz.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JLabelGazteleraz.setForeground(new java.awt.Color(153, 255, 153));
         JLabelGazteleraz.setText("Gazteleraz:");
 
         JButtonTxertatu.setText("TERMINOA GEHITU");
@@ -175,6 +187,8 @@ public class View extends javax.swing.JFrame {
         JTextAreaHiztegiaIkusi.setColumns(20);
         JTextAreaHiztegiaIkusi.setRows(5);
         jScrollPane1.setViewportView(JTextAreaHiztegiaIkusi);
+
+        jSeparator1.setForeground(new java.awt.Color(153, 255, 153));
 
         JButtonTraducir.setText("ITZULI");
 

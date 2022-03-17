@@ -7,6 +7,10 @@ package pkg1;
 
 //import model.Model;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
+
 /**
  *
  * @author arceredillo.adrian
@@ -20,6 +24,11 @@ public class View extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Hiztegia Adrian");
         //JTextAreaHiztegiaIkusi.setEnabled(false);
+    }
+    
+    public void paint(Graphics draw) {
+        //esto solamente lo utilizaré para darle un nuevo color de fondo al jframe
+        getContentPane().setBackground(new Color(70, 80, 70));
     }
     
     /**
@@ -69,6 +78,7 @@ public class View extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         JButtonHitzBakarra = new javax.swing.JButton();
 
+        JDialogTerminoaGehitu.setBackground(new java.awt.Color(70, 80, 70));
         JDialogTerminoaGehitu.setSize(new java.awt.Dimension(600, 600));
 
         JLabelUserEus.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -127,12 +137,15 @@ public class View extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         JLabelTitulo.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        JLabelTitulo.setForeground(new java.awt.Color(153, 255, 153));
         JLabelTitulo.setText("HIZTEGIA");
 
-        JLabelEuskaraz.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JLabelEuskaraz.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        JLabelEuskaraz.setForeground(new java.awt.Color(153, 255, 153));
         JLabelEuskaraz.setText("Euskaraz:");
 
-        JLabelGazteleraz.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JLabelGazteleraz.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        JLabelGazteleraz.setForeground(new java.awt.Color(153, 255, 153));
         JLabelGazteleraz.setText("Gazteleraz:");
 
         JButtonTxertatu.setText("TERMINOA GEHITU");
@@ -166,7 +179,7 @@ public class View extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelEuskaraz)
@@ -175,7 +188,7 @@ public class View extends javax.swing.JFrame {
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(JLabelGazteleraz)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(JTextFieldGazUser, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(JButtonTxertatu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JButtonImprimatu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -194,7 +207,7 @@ public class View extends javax.swing.JFrame {
                             .addComponent(JLabelEuskaraz)
                             .addComponent(JTextFieldEusUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(JTextFieldGazUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JLabelGazteleraz))
                         .addGap(18, 18, 18)

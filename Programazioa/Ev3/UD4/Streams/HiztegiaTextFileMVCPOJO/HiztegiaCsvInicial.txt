@@ -1,0 +1,5 @@
+1, bat, uno
+2, bi, dos
+3, hiru, tres
+4, lau, cuatro
+5, bost, cinco
