@@ -1,9 +1,6 @@
-#clase hija
-#import self as self
 
-from Person import Persona
 
-class Student(Persona):
+class Student:
 
     """
     def __init__(self, si, sn, ss, sm, g):
