@@ -1,33 +1,45 @@
+import Basics
 
+from Groups import Groups
 
-class Student:
+class Students(Groups):
+    #@staticmethod
+    def __init__(self, nan, name, surname, tel, grKod, grNum):
+        super().__init__(grKod, grNum)
+        self.dni = nan
+        self.izena = name
+        self.abizena = surname
+        self.mobile = tel
 
-    """
-    def __init__(self, si, sn, ss, sm, g):
-        self.Id= si
-        self.name = sn
-        self.surname = ss
-        self.movile = sm
-        #self.group = g
-    """
+    def getDni(self):
+        return self.dni
 
-    def __init__(self, si, sn, ss, sm, adina, g, sch):
-        super().__init__(si, sn, ss, sm, adina)
-        self.cargo = g
-        self.school = sch
+    def setDni(self):
+        self.dni = input("Enter the value of the student's DNI: ")
 
-    def setCargo(self):
-        self.cargo = input("Enter the range of that person: ")
+    def getIzena(self):
+        return self.izena
 
-    def getCargo(self):
-        return self.cargo
+    def setIzena(self):
+        self.izena = Basics.BasicsMethods.askstring("name")
 
-    def setSchool(self, colegio):
-        self.school = colegio
+    def getAbizena(self):
+        return self.abizena
 
-    def getSchool(self):
-        return self.school
+    def setAbizena(self):
+        self.abizena = input("Enter the value of the student's ABIZENA: ")
+
+    def getMobile(self):
+        return self.mobile
+
+    def setMobile(self):
+        self.mobile = int(input("Enter the value of the student's MOBILE: "))
 
     def print(self):
-        print(self.Id, self.name, self.surname, self.movile, self.age, self.cargo, self.school)
+        print(self.dni, self.izena, self.abizena,
+              self.mobile, super().getKodigoa(), super().getNumber())
+
+    #lists of object in python
+    #def printS(self):
+
 

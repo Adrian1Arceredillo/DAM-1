@@ -2,7 +2,7 @@ from Person import Persona
 from Student import Student
 
 print()
-p2 = Persona(2, "hola", "amigo", 456789321, 16)
+p2 = Persona("12Un", "hola", "amigo", 456789321, 16)
 p2.setname()    #este método pide un parámetro (String) al usuario
 p2.setsurname("gomez")  #recibe un String
 p2.print()

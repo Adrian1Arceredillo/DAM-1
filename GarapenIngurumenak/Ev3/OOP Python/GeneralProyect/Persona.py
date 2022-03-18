@@ -1,4 +1,4 @@
-
+import Basics
 
 class Persona:
     def __init__(self, nan, name, surname, tel):
@@ -20,7 +20,7 @@ class Persona:
         return self.mobile
 
     def setDni(self):
-        self.dni = input("Enter the value of the DNI: ")
+        self.dni = Basics.BasicsMethods.askstring("DNI")
 
     def setIzena(self, nombre):
         self.izena = nombre
