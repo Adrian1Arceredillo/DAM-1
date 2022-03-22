@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class Terminoa {
     
-    private final String DB = "db/Hiztegia.db";
+    private final String DB = "db/GaragePrueba.db";
     
     private int id;
     private String euskara;

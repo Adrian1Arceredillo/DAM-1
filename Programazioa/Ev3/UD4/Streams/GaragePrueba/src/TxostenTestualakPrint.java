@@ -26,3 +26,12 @@ public class TxostenTestualakPrint {
         System.out.println("");
     }
 }
+
+/*
+	================================
+Cust. id        Customer's Name        Customer's Surname        Age                      Mail         Phone Number 
+--------------------------------------------------------------------------------------------------------------
+1                          Home                    Prueba         19      homePrueba@gmail.com            123456789
+2                         Pedro                     Lopez         34      pedroLopez@gmail.com            321654987
+3                           Ane                  Aizgorri         12          aneAiz@gmail.com            978645312
+*/

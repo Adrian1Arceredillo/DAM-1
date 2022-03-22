@@ -27,7 +27,7 @@ public class Model {
         Terminoa t1;
         
         try {
-            inputStream = new BufferedReader(new FileReader("../HiztegiaTextFileMVCPOJO/HiztegiaCsvInicial.txt"));
+            inputStream = new BufferedReader(new FileReader("../GaragePrueba/ClientesInicial.txt"));
             //outputStream = new PrintWriter(new FileWriter("../HiztegiaTextFileMVCPOJO/HiztegiaCsvFinal.txt"));
 
             String str1;
@@ -67,7 +67,7 @@ public class Model {
         PrintWriter outputStream = null;
         
         try {
-            outputStream = new PrintWriter(new FileWriter("../HiztegiaTextFileMVCPOJO/HiztegiaCsvFinal.txt"));
+            outputStream = new PrintWriter(new FileWriter("../GaragePrueba/ClientesFinal.txt"));
             outputStream.print(infoTextArea);
         } catch (IOException ex) {
             Logger.getLogger(Model.class.getName()).log(Level.SEVERE, null, ex);
