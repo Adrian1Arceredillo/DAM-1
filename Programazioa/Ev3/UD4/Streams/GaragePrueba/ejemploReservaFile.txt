@@ -1,0 +1,12 @@
+
+###Reservation's Invoice###
+---------------------------
+Booking ID: 2
+Booking Date: 23/03/2022
+Customer's Name: customer 1
+Service: Oil Change
+Products: Wrench, Screwdriver
+Cabin: C01
+Price: 150.25
+---------------------------
+Team 1 - DIY Garage
