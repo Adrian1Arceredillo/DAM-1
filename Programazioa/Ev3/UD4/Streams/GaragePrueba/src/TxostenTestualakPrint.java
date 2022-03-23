@@ -13,24 +13,58 @@ public class TxostenTestualakPrint {
     public static void main(String[] args) {
         
         System.out.println("");
-        System.out.println("Enter the id/code of the desired reservation: 2");
         System.out.println("");
-        System.out.println("    ->Desired reseravtion ID: 2");
-        System.out.println("    -> Wait a second...");
         System.out.println("");
-        System.out.println("RESERVATION'S INVOICE: ");
-        System.out.println("========================================================================================================================================");
-        System.out.printf("%-10s %20s %25s %20s %30s %15s %10s\n", "Booking ID", "Booking Date", "Customer's Name", "Service", "Products", "Cabin", "Price");
-        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Show the purchases of the customer (enter cust. id): 2");
+        System.out.println("");
+        System.out.println("    ->This customer's purchases are: ");
+        System.out.println("");
+        System.out.println("PURCHASE'S INVOICE: ");
+        System.out.println("===============================================================================");
+        System.out.printf("%-10s %15s %15s %15s %20s\n", "Cust. ID", "Product ID", "Date", "Amount", "Final Cost");
+        System.out.println("-------------------------------------------------------------------------------");
+        System.out.printf("%-10d %15s %15s %15d %20.2f\n", 2, "C02", "23/03/2022", 5, 150.25);
+        System.out.printf("%-10d %15s %15s %15d %20.2f\n", 2, "T44", "06/10/2018", 3, 40.10);
         
-        System.out.printf("%-10d %20s %25s %20s %30s %15s %10.2f\n", 2, "23/03/2022", "customer 1", "Oil Change", "Wrench, Screwdriver", "C01", 150.25);
+        //System.out.printf("%-10d %20s %25s %20s %30s %15s %10.2f\n", 2, "23/03/2022", "customer 1", "Oil Change", "Wrench, Screwdriver", "C01", 150.25);
         System.out.println("");
-        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-        System.out.println("Service granted by Team 1 - DIY Garage");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println("Number of purchases: 2");
         System.out.println("");
         System.out.println("");
     }
 }
+
+/*
+System.out.println("LIST OF RESERVATIONS: ");
+        System.out.println("=========================================================");
+        System.out.printf("%-10s %20s %25s\n", "Booking ID", "Customer's ID", "Date");
+        System.out.println("---------------------------------------------------------");
+        System.out.printf("%-10d %20s %25s \n", 1, "customerOne", "23/03/2022");
+        System.out.printf("%-10d %20s %25s \n", 2, "customerTwo", "16/10/2019");
+        //System.out.printf("%-10d %20s %25s %20s %30s %15s %10.2f\n", 2, "23/03/2022", "customer 1", "Oil Change", "Wrench, Screwdriver", "C01", 150.25);
+        System.out.println("");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println("Number of reservations: 2");
+*/
+
+/*
+System.out.println("");
+        System.out.println("Enter the id/code of the desired purchase: 2");
+        System.out.println("");
+        System.out.println("    ->Desired purchase's ID: 2");
+        System.out.println("    -> Wait a second...");
+        System.out.println("");
+        System.out.println("PURCHASE'S INVOICE: ");
+        System.out.println("========================================================================================================================================");
+        System.out.printf("%-10s %20s %25s\n", "Booking ID", "Customer's ID", "Date");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%-10d %20s %25s \n", 1, "customerOne", "23/03/2022");
+        //System.out.printf("%-10d %20s %25s %20s %30s %15s %10.2f\n", 2, "23/03/2022", "customer 1", "Oil Change", "Wrench, Screwdriver", "C01", 150.25);
+        System.out.println("");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println("Service granted by Team 1 - DIY Garage");
+*/
 
 /*
 	================================
