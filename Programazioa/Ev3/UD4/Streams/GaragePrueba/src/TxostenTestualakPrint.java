@@ -15,21 +15,16 @@ public class TxostenTestualakPrint {
         System.out.println("");
         System.out.println("");
         System.out.println("");
-        System.out.println("Show the purchases of the customer (enter cust. id): 2");
+        System.out.println("CUSTOMER HISTORY: ");
+        System.out.println("=============================================================================================================================================");
+        System.out.printf("%-10s %20s %25s %20s %20s %20s %20s\n", "Cust. id", "Cust. Name", "Cust. Surname", "Password", "Birthday", "Mail", "Phone Number");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------");
+        //System.out.printf("%10d %20s %20s %10s %10s %10s %10s %s\n", 2, "Booking Date", "Client's Name", "Phone Number", "Service", "Cabin", "Precio", "Ordaindua");
+        System.out.printf("%-10d %20s %25s %20s %20s %20s %20d\n", 1, "name One", "surname One", "passWord1", "21/06/2012", "surname1@garage.diy", 123456789);
+        System.out.printf("%-10d %20s %25s %20s %20s %20s %20d\n", 2, "name Two", "surname Two", "passWord2", "16/03/2021", "surname2@garage.diy", 987654321);
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("");
-        System.out.println("    ->This customer's purchases are: ");
-        System.out.println("");
-        System.out.println("PURCHASE'S INVOICE: ");
-        System.out.println("===============================================================================");
-        System.out.printf("%-10s %15s %15s %15s %20s\n", "Cust. ID", "Product ID", "Date", "Amount", "Final Cost");
-        System.out.println("-------------------------------------------------------------------------------");
-        System.out.printf("%-10d %15s %15s %15d %20.2f\n", 2, "C02", "23/03/2022", 5, 150.25);
-        System.out.printf("%-10d %15s %15s %15d %20.2f\n", 2, "T44", "06/10/2018", 3, 40.10);
-        
-        //System.out.printf("%-10d %20s %25s %20s %30s %15s %10.2f\n", 2, "23/03/2022", "customer 1", "Oil Change", "Wrench, Screwdriver", "C01", 150.25);
-        System.out.println("");
-        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-        System.out.println("Number of purchases: 2");
+        System.out.println("\tNumber of clients: 2");
         System.out.println("");
         System.out.println("");
     }
