@@ -1,21 +1,20 @@
-package bocetosGUI;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package bocetosGUI;
 
 /**
  *
- * @author arceredillo.adrian
+ * @author AdriAlex
  */
-public class BocetoGUI_Inicio extends javax.swing.JFrame {
+public class BocetoGUI_graphicall extends javax.swing.JFrame {
 
     /**
-     * Creates new form BocetoGUI
+     * Creates new form BocetoGUI_graphicall
      */
-    public BocetoGUI_Inicio() {
+    public BocetoGUI_graphicall() {
         initComponents();
     }
 
@@ -61,21 +60,20 @@ public class BocetoGUI_Inicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BocetoGUI_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BocetoGUI_graphicall.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BocetoGUI_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BocetoGUI_graphicall.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BocetoGUI_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BocetoGUI_graphicall.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BocetoGUI_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BocetoGUI_graphicall.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BocetoGUI_Inicio().setVisible(true);
+                new BocetoGUI_graphicall().setVisible(true);
             }
         });
     }
