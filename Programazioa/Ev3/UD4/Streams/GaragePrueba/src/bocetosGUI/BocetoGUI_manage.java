@@ -16,6 +16,13 @@ public class BocetoGUI_manage extends javax.swing.JFrame {
      */
     public BocetoGUI_manage() {
         initComponents();
+        //this.setResizable(false);
+        //this.setSize(600, 600);
+        JComboBoxNewOccupation.addItem("...");
+        JComboBoxNewOccupation.addItem("Mechanic");
+        JComboBoxNewOccupation.addItem("Painter");
+        JComboBoxNewOccupation.addItem("Maintenance man");
+        JComboBoxNewOccupation.addItem("Admin");
     }
 
     /**
@@ -27,17 +34,211 @@ public class BocetoGUI_manage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JLabelManageTitulo = new javax.swing.JLabel();
+        JLabelManageIntro = new javax.swing.JLabel();
+        JLabelPedirID = new javax.swing.JLabel();
+        JTextFieldWorkerIdUser = new javax.swing.JTextField();
+        JButtonBuscarWorkedId = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        JLabelChangeId = new javax.swing.JLabel();
+        JTextFieldWorkerID = new javax.swing.JTextField();
+        JLabelChangeName = new javax.swing.JLabel();
+        JTextFieldNewName = new javax.swing.JTextField();
+        JLabelChangeSurname = new javax.swing.JLabel();
+        JTextFieldNewSurname = new javax.swing.JTextField();
+        JLabelChangePassword = new javax.swing.JLabel();
+        JTextFieldNewPassword = new javax.swing.JTextField();
+        JLabelChangeOccupation = new javax.swing.JLabel();
+        JComboBoxNewOccupation = new javax.swing.JComboBox<>();
+        JLabelChangeMail = new javax.swing.JLabel();
+        JTextFieldNewMail = new javax.swing.JTextField();
+        JLabelChangePhoneNumber = new javax.swing.JLabel();
+        JTextFieldNewPhoneNumber = new javax.swing.JTextField();
+        JLabelChangeSalary = new javax.swing.JLabel();
+        JTextFieldNewSalary = new javax.swing.JTextField();
+        JLabelChangeStartTime = new javax.swing.JLabel();
+        JTextFieldNewStartTime = new javax.swing.JTextField();
+        JLabelChangeFinishTime = new javax.swing.JLabel();
+        JTextFieldChangeFinishTime = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        JButtonSaveChanges = new javax.swing.JButton();
+        JButtonCancelar = new javax.swing.JButton();
+        jButtonLogOut = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        JLabelManageTitulo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        JLabelManageTitulo.setText("Garage HALAB - Management");
+
+        JLabelManageIntro.setText("Session started as an Administrator. Enter worker's id to update it.");
+
+        JLabelPedirID.setText("Worker's ID:");
+
+        JButtonBuscarWorkedId.setText("Search");
+
+        JLabelChangeId.setText("Worker's Id:");
+
+        JLabelChangeName.setText("Name:");
+
+        JLabelChangeSurname.setText("Surname:");
+
+        JLabelChangePassword.setText("Password:");
+
+        JLabelChangeOccupation.setText("Occupation:");
+
+        JLabelChangeMail.setText("Mail:");
+
+        JLabelChangePhoneNumber.setText("Phone Number:");
+
+        JLabelChangeSalary.setText("Salary:");
+
+        JLabelChangeStartTime.setText("Start-time:");
+
+        JLabelChangeFinishTime.setText("Finish-time:");
+
+        JButtonSaveChanges.setText("Save Changes");
+
+        JButtonCancelar.setText("Cancel");
+
+        jButtonLogOut.setText("Log out");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(JLabelPedirID)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JTextFieldWorkerIdUser, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(JButtonBuscarWorkedId))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(JLabelManageTitulo)
+                        .addGap(7, 7, 7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(52, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(JLabelChangeSalary)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(JLabelChangeOccupation)
+                                                .addComponent(JLabelChangePassword, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(JLabelChangeMail, javax.swing.GroupLayout.Alignment.TRAILING))
+                                            .addComponent(JLabelChangePhoneNumber)
+                                            .addComponent(JLabelChangeStartTime)
+                                            .addComponent(JLabelChangeFinishTime))
+                                        .addGap(18, 18, 18))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(JLabelChangeName)
+                                        .addGap(21, 21, 21))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(JLabelChangeId)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTextFieldWorkerID, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JTextFieldNewPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(JTextFieldNewName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(JLabelChangeSurname)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(JTextFieldNewSurname, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
+                                        .addComponent(JComboBoxNewOccupation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(JTextFieldNewPassword)
+                                        .addComponent(JTextFieldNewMail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JTextFieldNewSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(JTextFieldChangeFinishTime, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                        .addComponent(JTextFieldNewStartTime, javax.swing.GroupLayout.Alignment.LEADING))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(JButtonSaveChanges)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(JButtonCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButtonLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JLabelManageIntro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19)))
+                        .addGap(0, 42, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(JLabelManageTitulo)
+                .addGap(18, 18, 18)
+                .addComponent(JLabelManageIntro, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelPedirID)
+                    .addComponent(JTextFieldWorkerIdUser)
+                    .addComponent(JButtonBuscarWorkedId))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelChangeId)
+                    .addComponent(JTextFieldWorkerID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelChangeName)
+                    .addComponent(JTextFieldNewName)
+                    .addComponent(JLabelChangeSurname)
+                    .addComponent(JTextFieldNewSurname))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelChangePassword)
+                    .addComponent(JTextFieldNewPassword))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelChangeOccupation)
+                    .addComponent(JComboBoxNewOccupation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelChangeMail)
+                    .addComponent(JTextFieldNewMail))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelChangeSalary)
+                    .addComponent(JTextFieldNewSalary))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelChangePhoneNumber)
+                    .addComponent(JTextFieldNewPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelChangeStartTime)
+                    .addComponent(JTextFieldNewStartTime))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelChangeFinishTime)
+                    .addComponent(JTextFieldChangeFinishTime))
+                .addGap(30, 30, 30)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JButtonSaveChanges)
+                    .addComponent(JButtonCancelar)
+                    .addComponent(jButtonLogOut))
+                .addGap(25, 25, 25))
         );
 
         pack();
@@ -79,5 +280,35 @@ public class BocetoGUI_manage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JButton JButtonBuscarWorkedId;
+    public static javax.swing.JButton JButtonCancelar;
+    public static javax.swing.JButton JButtonSaveChanges;
+    public static javax.swing.JComboBox<String> JComboBoxNewOccupation;
+    public static javax.swing.JLabel JLabelChangeFinishTime;
+    public static javax.swing.JLabel JLabelChangeId;
+    public static javax.swing.JLabel JLabelChangeMail;
+    public static javax.swing.JLabel JLabelChangeName;
+    public static javax.swing.JLabel JLabelChangeOccupation;
+    public static javax.swing.JLabel JLabelChangePassword;
+    public static javax.swing.JLabel JLabelChangePhoneNumber;
+    public static javax.swing.JLabel JLabelChangeSalary;
+    public static javax.swing.JLabel JLabelChangeStartTime;
+    public static javax.swing.JLabel JLabelChangeSurname;
+    public static javax.swing.JLabel JLabelManageIntro;
+    public static javax.swing.JLabel JLabelManageTitulo;
+    public static javax.swing.JLabel JLabelPedirID;
+    public static javax.swing.JTextField JTextFieldChangeFinishTime;
+    public static javax.swing.JTextField JTextFieldNewMail;
+    public static javax.swing.JTextField JTextFieldNewName;
+    public static javax.swing.JTextField JTextFieldNewPassword;
+    public static javax.swing.JTextField JTextFieldNewPhoneNumber;
+    public static javax.swing.JTextField JTextFieldNewSalary;
+    public static javax.swing.JTextField JTextFieldNewStartTime;
+    public static javax.swing.JTextField JTextFieldNewSurname;
+    public static javax.swing.JTextField JTextFieldWorkerID;
+    public static javax.swing.JTextField JTextFieldWorkerIdUser;
+    public static javax.swing.JButton jButtonLogOut;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }

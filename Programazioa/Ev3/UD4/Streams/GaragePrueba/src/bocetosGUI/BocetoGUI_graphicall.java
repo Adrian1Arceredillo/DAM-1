@@ -27,17 +27,74 @@ public class BocetoGUI_graphicall extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JLabelGarageTitulo = new javax.swing.JLabel();
+        JLabelGraphIntro = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        JCheckBoxPurchaseEvolution = new javax.swing.JCheckBox();
+        JCheckPurchaseHistory = new javax.swing.JCheckBox();
+        JCheckBoxSortAge = new javax.swing.JCheckBox();
+        jSeparator1 = new javax.swing.JSeparator();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        JLabelGarageTitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        JLabelGarageTitulo.setText("Garage HALAB");
+
+        JLabelGraphIntro.setText("This section allows you to know more about the garage.");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        JCheckBoxPurchaseEvolution.setText("Purchase evolution");
+
+        JCheckPurchaseHistory.setText("Certain customer's purchase history");
+
+        JCheckBoxSortAge.setText("Sort by age");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLabelGarageTitulo)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(31, 31, 31)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(JCheckBoxPurchaseEvolution)
+                                .addComponent(JCheckPurchaseHistory)
+                                .addComponent(JCheckBoxSortAge))
+                            .addGap(49, 49, 49))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JLabelGraphIntro))
+                            .addContainerGap()))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addComponent(JLabelGarageTitulo)
+                .addGap(18, 18, 18)
+                .addComponent(JLabelGraphIntro)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(JCheckBoxPurchaseEvolution)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JCheckPurchaseHistory)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JCheckBoxSortAge)))
+                .addGap(32, 32, 32))
         );
 
         pack();
@@ -79,5 +136,13 @@ public class BocetoGUI_graphicall extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JCheckBox JCheckBoxPurchaseEvolution;
+    public static javax.swing.JCheckBox JCheckBoxSortAge;
+    public static javax.swing.JCheckBox JCheckPurchaseHistory;
+    public static javax.swing.JLabel JLabelGarageTitulo;
+    public static javax.swing.JLabel JLabelGraphIntro;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
