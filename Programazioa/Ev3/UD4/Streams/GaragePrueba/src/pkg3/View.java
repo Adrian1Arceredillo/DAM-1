@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg2;
+package pkg3;
 
 //import model.Model;
 
+import pkg2.*;
 import java.awt.Color;
 import java.awt.Graphics;
 

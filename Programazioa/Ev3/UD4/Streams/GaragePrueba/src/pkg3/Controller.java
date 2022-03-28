@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg2;
+package pkg3;
 
+import pkg2.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -22,30 +23,38 @@ public class Controller implements ActionListener {
     
     private Model model;
     private View view;
+    private ViewPrueba pruebaView;
     
-     
+    /*
     public Controller(Model model, View view) {
         this.model = model;
         this.view = view;
         gehituActionListener(this);       
     }
+    */
     
-    
+    public Controller(Model model, ViewPrueba pruebaView) {
+        this.model = model;
+        //this.view = view;
+        this.pruebaView = pruebaView;
+        gehituActionListener(this);       
+    }
     
     
     private void gehituActionListener(ActionListener listener) {
         //GUIaren konponente guztiei gehitu listenerra
-        view.JButtonTxertatu.addActionListener(listener);   //JFrame principal
-        view.JButtonImprimatu.addActionListener(listener);  //JFrame principal
-        view.JButtonSalir.addActionListener(listener);      //JFrame principal
-        view.JButtonTraducir.addActionListener(listener);   //JFrame principal
+        ViewPrueba.JButtonProbarDBConection.addActionListener(listener);    //botón para comprobar la conexión a la db
+        //--------------------------//
+        ViewPrueba.JButtonGoTxostenak.addActionListener(listener);  //inicio -> botón para ver txostenak textuales
+        ViewPrueba.JButtonGoGraphicall.addActionListener(listener); //inicio -> botón para ver los informes gráficos 
         
-        view.JButtonVerClientes.addActionListener(listener);
+        ViewPrueba.JButtonPrintTxosten.addActionListener(listener); //textual reports -> botón para ver/imprimir los datos
+        ViewPrueba.JButtonReturnStart.addActionListener(listener);  //textual reports -> botón para volver al menú inicial
+        ViewPrueba.JButtonSaveInFile.addActionListener(listener);   //textual reports -> botón para guardar el contenido del text area en un fichero
         
-        view.JButtonUserGehitu.addActionListener(listener); //JDialog 1
-        view.JButtonItzuli.addActionListener(listener);     //JDialog 1
-        view.JButtonRegistrosTable.addActionListener(listener); //JDialog 2 - jtable
-        //view.JButtonSalir.addActionListener(listener);
+        ViewPrueba.JButtonViewGra.addActionListener(listener);  //graphical reports -> ver contenido (en gráficos) de los informes
+        ViewPrueba.JButtonClean.addActionListener(listener);  //graphical reports -> limpiar contenido del textArea
+        ViewPrueba.JButtonGoBack.addActionListener(listener);   //graphical report -> volcer al menú inicial
         
     }
     
@@ -55,6 +64,45 @@ public class Controller implements ActionListener {
         String actionCommand = e.getActionCommand();
         //listenerrak entzun dezakeen eragiketa bakoitzeko. Konponenteek 'actionCommad' propietatea daukate
         switch (actionCommand) {
+            case "Probar DB":
+                model.terminoakImprimatu();
+                break;
+            case "Textual Reports":
+                System.out.println("Wait... The Textual Report's section is loading. \n");
+                ViewPrueba.JFrameTextReports.setVisible(true);
+                ViewPrueba.JFrameTextReports.setTitle("Create a New Customer!");
+                ViewPrueba.JFrameTextReports.setSize(600, 400);
+                ViewPrueba.JFrameTextReports.setResizable(false);
+                
+                break;
+            case "Graphicall Reports":
+                System.out.println("Wait... The Graphical Report's section is loading. \n");
+                ViewPrueba.JFrameGraphicalReports.setVisible(true);
+                ViewPrueba.JFrameGraphicalReports.setTitle("Create a New Customer!");
+                ViewPrueba.JFrameGraphicalReports.setSize(600, 356);
+                ViewPrueba.JFrameGraphicalReports.setResizable(false);
+                break;
+            
+            case "View Txostena":   //txosten textualak ikusi
+                System.out.println("Ver informes. \n");
+                break;
+            case "Save":
+                System.out.println("Guardando contenido en un fichero...\n");
+                break;
+            case "Go back": //menu nagusira bueltatu
+                ViewPrueba.JFrameTextReports.dispose();
+                break;
+            
+            case "View Graphics":   //txosten grafikoak -> ver datos en forma de gráficos
+                System.out.println("Ver los datos en forma de gráficos. ");
+                break;
+            case "Clean":   //txosten grafikoak -> vaciar el contenido del text area
+                ViewPrueba.JTextAreaGraphics.setText("Please, choose the report you want to represent");
+                break;
+            case "Go back to start":
+                ViewPrueba.JFrameGraphicalReports.dispose();
+                break;
+            
             case "New Client":
                 System.out.println("Has pulsado el botón 'New Client'");
                 view.JDialogTerminoaGehitu.setVisible(true);
@@ -148,9 +196,11 @@ public class Controller implements ActionListener {
                 //view.JTextFieldGazUser.setText(palabraTraducida);
                 */
                 break;
+            
         }
     }
     
     
     
 }
+
