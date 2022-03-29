@@ -29,7 +29,8 @@ public class Model {
         // SQLite connection string
         //String url = "jdbc:sqlite:" + DB;
         //String url = "jdbc:mariadb://localhost:3307/dbpruebagarage";
-        String url = "jdbc:mariadb://localhost:3307/dbPrueba";
+        //String url = "jdbc:mariadb://localhost:3307/dbPrueba";
+        String url = "jdbc:mysql://localhost:3306/db_enpresa";
         //String url = "jdbc:sqlite:" + DB;
         
         Connection conn = null;
@@ -39,7 +40,7 @@ public class Model {
         "");
         */
         try {
-            conn = DriverManager.getConnection(url, "root", "root");
+            conn = DriverManager.getConnection(url, "root", "");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -61,14 +62,14 @@ public class Model {
     }
     
     public void terminoakImprimatu(){
-        String sql = "SELECT * FROM produktuak";
-        String sql2 = "SELECT * FROM tbltabla1";
+        String sql = "SELECT * FROM langilea";
+        //String sql2 = "SELECT * FROM tbltabla1";
         int numRegistros = 0;   //guardará el número/cantidad de registros 
         
         
         try (Connection conn = connect();
              Statement stmt  = conn.createStatement();
-             ResultSet rs    = stmt.executeQuery(sql2)){
+             ResultSet rs    = stmt.executeQuery(sql)){
             
             // loop through the result set
             /*System.out.println("\n\t" + DB + " datubasearen datuak: ");
@@ -82,8 +83,9 @@ public class Model {
                                rs.getString("Nombre") + "\t\t" +
                                rs.getString("Apellido") + "\t\t" + 
                                rs.getInt("Edad") + "\t" + rs.getString("Mail") + "\t\t" + rs.getInt("Telefono") + "\t");*/
-                System.out.printf("%-10s \n", 
-                        rs.getString("a"));
+                System.out.printf("%-10s %-10s \n", 
+                        rs.getInt("langile_ID"),
+                        rs.getString("langile_izena"));
                 /*
                 System.out.printf("%-10s %20s %25.2f %10s\n", 
                         rs.getString("id_produktua"), 
