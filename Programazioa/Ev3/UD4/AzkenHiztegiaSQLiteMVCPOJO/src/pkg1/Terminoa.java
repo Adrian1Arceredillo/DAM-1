@@ -45,7 +45,10 @@ public class Terminoa {
 
     @Override
     public String toString() {
-        return String.format("%3d  %-30s%-30s",id, euskaraz, gazteleraz);
+
+        String s = "\nId : " + this.id + "\nEuskera : " + euskaraz + "  \nGaztelera : " + gazteleraz + 
+                "\n------------------------------------------------------------------------------------\n";
+        return s;
     }
 
     @Override
@@ -76,5 +79,5 @@ public class Terminoa {
     }
     
     
-    
+
 }
