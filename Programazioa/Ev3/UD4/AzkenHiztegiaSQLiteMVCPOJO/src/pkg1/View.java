@@ -82,6 +82,12 @@ public class View extends javax.swing.JFrame {
         JButtonTranslate = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         JLabelMainTitle2 = new javax.swing.JLabel();
+        ChoiceGameFiveWords = new java.awt.Choice();
+        JLabelChooseFiveRandom = new javax.swing.JLabel();
+        JButtonChooseWordsGame = new javax.swing.JButton();
+        JLabelUserTranslation = new javax.swing.JLabel();
+        JTextFieldUserEnterTranslation = new javax.swing.JTextField();
+        JButtonCheckUserTranslation = new javax.swing.JButton();
 
         JTableFilterWords.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,6 +192,16 @@ public class View extends javax.swing.JFrame {
         JLabelMainTitle2.setFont(new java.awt.Font("Yu Gothic", 1, 24)); // NOI18N
         JLabelMainTitle2.setText("GUESS THE TRANSLATION");
 
+        JLabelChooseFiveRandom.setText("Select/generate words:");
+
+        JButtonChooseWordsGame.setText("Generate");
+        JButtonChooseWordsGame.setActionCommand("GENERATE");
+
+        JLabelUserTranslation.setText("Enter translation:");
+
+        JButtonCheckUserTranslation.setText("Check!");
+        JButtonCheckUserTranslation.setActionCommand("CHECK TRANSLATION USER");
+
         javax.swing.GroupLayout JPanelHiztegiaLayout = new javax.swing.GroupLayout(JPanelHiztegia);
         JPanelHiztegia.setLayout(JPanelHiztegiaLayout);
         JPanelHiztegiaLayout.setHorizontalGroup(
@@ -193,9 +209,6 @@ public class View extends javax.swing.JFrame {
             .addGroup(JPanelHiztegiaLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JPanelHiztegiaLayout.createSequentialGroup()
-                        .addComponent(JLabelMainTitle2)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jSeparator2)
                     .addGroup(JPanelHiztegiaLayout.createSequentialGroup()
                         .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -238,7 +251,23 @@ public class View extends javax.swing.JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addComponent(jSeparator1))
                         .addGap(32, 32, 32)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE))
+                    .addGroup(JPanelHiztegiaLayout.createSequentialGroup()
+                        .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JLabelMainTitle2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPanelHiztegiaLayout.createSequentialGroup()
+                                .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JLabelChooseFiveRandom)
+                                    .addComponent(JLabelUserTranslation))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(ChoiceGameFiveWords, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                    .addComponent(JTextFieldUserEnterTranslation))))
+                        .addGap(18, 18, 18)
+                        .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JButtonChooseWordsGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JButtonCheckUserTranslation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         JPanelHiztegiaLayout.setVerticalGroup(
@@ -255,11 +284,12 @@ public class View extends javax.swing.JFrame {
                             .addComponent(JLabelEusInsertNew)
                             .addComponent(JTextFieldEuskarazUserNew, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(JTextFieldGaztelerazUserNew, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JLabelGazInsertNew)
-                            .addComponent(JButtonTxertatu)
-                            .addComponent(JButtonFindSearchRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JButtonTxertatu, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(JTextFieldGaztelerazUserNew, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JLabelGazInsertNew)
+                                .addComponent(JButtonFindSearchRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -284,7 +314,18 @@ public class View extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JLabelMainTitle2)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(JLabelChooseFiveRandom)
+                        .addComponent(ChoiceGameFiveWords, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JButtonChooseWordsGame))
+                .addGap(18, 18, 18)
+                .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelUserTranslation)
+                    .addComponent(JTextFieldUserEnterTranslation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JButtonCheckUserTranslation))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -371,8 +412,11 @@ public class View extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup ButtonGroupFilter;
+    public static java.awt.Choice ChoiceGameFiveWords;
     public static java.awt.Choice ChoiceRecordToDelete;
     public static javax.swing.JButton JButtonCancelDelete;
+    public static javax.swing.JButton JButtonCheckUserTranslation;
+    public static javax.swing.JButton JButtonChooseWordsGame;
     public static javax.swing.JButton JButtonDeleteRecord;
     javax.swing.JButton JButtonExit;
     public static javax.swing.JButton JButtonFindSearchRecord;
@@ -380,10 +424,12 @@ public class View extends javax.swing.JFrame {
     public static javax.swing.JButton JButtonTranslate;
     public static javax.swing.JButton JButtonTxertatu;
     public static javax.swing.JDialog JDialogFilterFirstLetter;
+    public static javax.swing.JLabel JLabelChooseFiveRandom;
     public static javax.swing.JLabel JLabelEusInsertNew;
     public static javax.swing.JLabel JLabelGazInsertNew;
     public static javax.swing.JLabel JLabelMainTitle1;
     public static javax.swing.JLabel JLabelMainTitle2;
+    public static javax.swing.JLabel JLabelUserTranslation;
     public static javax.swing.JPanel JPanelHiztegia;
     public static javax.swing.JRadioButton JRadioButtonViewOnTable;
     public static javax.swing.JTable JTableFilterWords;
@@ -391,6 +437,7 @@ public class View extends javax.swing.JFrame {
     public static javax.swing.JTextArea JTextAreaHiztegia;
     public static javax.swing.JTextField JTextFieldEuskarazUserNew;
     public static javax.swing.JTextField JTextFieldGaztelerazUserNew;
+    public static javax.swing.JTextField JTextFieldUserEnterTranslation;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

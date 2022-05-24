@@ -103,10 +103,6 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="JLabelMainTitle2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
                       <Component id="jSeparator2" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -164,6 +160,28 @@
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" pref="243" max="32767" attributes="0"/>
                       </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="JLabelMainTitle2" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="JLabelChooseFiveRandom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="JLabelUserTranslation" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="ChoiceGameFiveWords" pref="158" max="32767" attributes="0"/>
+                                      <Component id="JTextFieldUserEnterTranslation" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="JButtonChooseWordsGame" max="32767" attributes="0"/>
+                              <Component id="JButtonCheckUserTranslation" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -185,11 +203,13 @@
                               <Component id="JTextFieldEuskarazUserNew" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="JTextFieldGaztelerazUserNew" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="JLabelGazInsertNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="JButtonTxertatu" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="JButtonFindSearchRecord" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="JTextFieldGaztelerazUserNew" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="JLabelGazInsertNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JButtonFindSearchRecord" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jSeparator1" min="-2" pref="26" max="-2" attributes="0"/>
@@ -221,7 +241,21 @@
                   <Component id="jSeparator2" min="-2" pref="22" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="JLabelMainTitle2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="176" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="JLabelChooseFiveRandom" min="-2" max="-2" attributes="0"/>
+                          <Component id="ChoiceGameFiveWords" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="JButtonChooseWordsGame" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="JLabelUserTranslation" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JTextFieldUserEnterTranslation" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JButtonCheckUserTranslation" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="90" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -424,6 +458,50 @@
               <Font name="Yu Gothic" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="GUESS THE TRANSLATION"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="java.awt.Choice" name="ChoiceGameFiveWords">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="JLabelChooseFiveRandom">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Select/generate words:"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="JButtonChooseWordsGame">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Generate"/>
+            <Property name="actionCommand" type="java.lang.String" value="GENERATE"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="JLabelUserTranslation">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Enter translation:"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="JTextFieldUserEnterTranslation">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="JButtonCheckUserTranslation">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Check!"/>
+            <Property name="actionCommand" type="java.lang.String" value="CHECK TRANSLATION USER"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>

@@ -7,6 +7,7 @@ package pkg1;
 import java.awt.CheckboxGroup;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import pkg1.Model;
 import pkg1.View;
@@ -37,6 +38,10 @@ public class Controller implements ActionListener {
 
         View.JButtonTranslate.addActionListener(listener);  //button to translate the word the user enters
 
+        View.JButtonChooseWordsGame.addActionListener(listener);  //button to choose 5 words randomly from the table Terminoak of the database
+
+        View.JButtonCheckUserTranslation.addActionListener(listener);   //button to check if the user entered the correct translation of the word selected
+
     }
 
     @Override
@@ -59,7 +64,7 @@ public class Controller implements ActionListener {
                     if (Model.checkNewRecordExists(terminoaBeforeInsert.getEuskaraz(), terminoaBeforeInsert.getGazteleraz())) {
                         JOptionPane.showMessageDialog(null, "The desired record could not be inserted because one with the \n"
                                 + "same characteristics already exists. Please, try again! ", "Warning! ", JOptionPane.WARNING_MESSAGE);
-                        
+
                         View.JTextAreaHiztegia.setText("This record already exists. Try again... ");
                         View.JTextFieldEuskarazUserNew.setText("");
                         View.JTextFieldGaztelerazUserNew.setText("");
@@ -126,7 +131,6 @@ public class Controller implements ActionListener {
                 }
 
                 //System.out.println("You pressed the 'Search' button. ");
-
                 if (View.ChoiceRecordToDelete.isVisible() == false) {
                     View.ChoiceRecordToDelete.setEnabled(true);
                     View.ChoiceRecordToDelete.setVisible(true);
@@ -263,6 +267,39 @@ public class Controller implements ActionListener {
 
                 break;
 
+            case "GENERATE":
+                View.ChoiceGameFiveWords.addItem("...");
+                for (int i = 0; i < Model.getAllWords().size(); ++i) {
+                    View.ChoiceGameFiveWords.addItem(Model.getAllWords().get(i).getEuskaraz());
+                }
+
+                /*
+                for (int i = 0; i < fiveRandom.size(); ++i) {
+                    View.ChoiceGameFiveWords.addItem(fiveRandom.get(i).getEuskaraz());
+                }
+                 */
+                break;
+
+            case "CHECK TRANSLATION USER":
+                ArrayList<GameUserAttempts> eachAttemptUser = new ArrayList<>();
+
+                if (Model.checkUserTranslation(View.ChoiceGameFiveWords.getSelectedItem(), View.JTextFieldUserEnterTranslation.getText().toLowerCase())) {
+                    System.out.println("correct! ");
+                    GameUserAttempts eachTry = new GameUserAttempts(View.ChoiceGameFiveWords.getSelectedItem(),
+                            View.JTextFieldUserEnterTranslation.getText().toLowerCase(), "Correct");
+                    eachAttemptUser.add(eachTry);
+                    View.JTextAreaHiztegia.setText(eachTry.toString());
+
+                } else {
+                    System.out.println("wrong");
+                    GameUserAttempts eachTry = new GameUserAttempts(View.ChoiceGameFiveWords.getSelectedItem(),
+                            View.JTextFieldUserEnterTranslation.getText().toLowerCase(), "Wrong!");
+                    View.JTextAreaHiztegia.setText(eachTry.toString());
+                }
+                
+                
+                System.out.println(eachAttemptUser.toString());
+                break;
         }
 
     }

@@ -7,12 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Random;
 
 /*
 Other imports
-*/
-
-
+ */
 public class Model {
 
     private final String DB = "db/Hiztegia.db";
@@ -67,6 +66,8 @@ public class Model {
         return allWords;
     }
 
+    
+
     public void terminoakInprimatu() {
         String taula = "Terminoak";
         String sql = "SELECT * FROM " + taula;
@@ -118,16 +119,38 @@ public class Model {
             System.out.println(e.getMessage());
         }
     }
-    
+
     public static boolean checkNewRecordExists(String eusBeforeInsert, String gazBeforeInsert) {
         String sql = "SELECT * FROM Terminoak WHERE euskaraz = ? and gazteleraz = ?";
-        
+
         try (Connection conn = connect2();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // set the corresponding param
             pstmt.setString(1, eusBeforeInsert);
             pstmt.setString(2, gazBeforeInsert);
+            // update 
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                return true;
+                //strBuscado = rs.getString("gazteleraz");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+    
+    
+    public static boolean checkUserTranslation(String originalEuskaraz, String userGazteleraz) {
+        String sql = "SELECT * FROM Terminoak WHERE euskaraz = ? and gazteleraz = ?";
+
+        try (Connection conn = connect2();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // set the corresponding param
+            pstmt.setString(1, originalEuskaraz);
+            pstmt.setString(2, userGazteleraz);
             // update 
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -191,7 +214,7 @@ public class Model {
 
         String sql = "INSERT INTO Terminoak(id,euskaraz,gazteleraz) VALUES(?,?,?)";
 
-        try (Connection conn = konektatu(); 
+        try (Connection conn = konektatu();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, t.getId());
             pstmt.setString(2, t.getEuskaraz());
@@ -237,12 +260,11 @@ public class Model {
         }
 
     }
-    
-    
+
     public static String translateWord(String euskarazUserChoice) {
         String sql = "SELECT gazteleraz FROM Terminoak WHERE euskaraz = ? LIMIT 1";     //buscar la forma de devolver SOLO EL PRIMERO que cumpla las condiciones
         String strBuscado = "no result found";
-        
+
         try (Connection conn = connect2();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
@@ -256,10 +278,9 @@ public class Model {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        
+
         return strBuscado;
     }
-    
 
     public static ArrayList<Terminoa> registrosArrayList() {
         ArrayList<Terminoa> regTerminoak = new ArrayList<>();
@@ -280,7 +301,5 @@ public class Model {
 
         return regTerminoak;
     }
-    
-    
 
 }
