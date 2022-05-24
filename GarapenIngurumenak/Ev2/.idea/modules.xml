@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Ev2.iml" filepath="$PROJECT_DIR$/.idea/Ev2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Erronka/DIY-GARAGE_ERRONKA/GarapenIngurumenak/Python_Proyect/diyGaragePythonOOP/.idea/diyGaragePythonOOP.iml" filepath="$PROJECT_DIR$/../../../Erronka/DIY-GARAGE_ERRONKA/GarapenIngurumenak/Python_Proyect/diyGaragePythonOOP/.idea/diyGaragePythonOOP.iml" />
+    </modules>
+  </component>
+</project>
