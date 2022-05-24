@@ -8,6 +8,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/*
+Other imports
+*/
+
+
 public class Model {
 
     private final String DB = "db/Hiztegia.db";
@@ -113,6 +118,27 @@ public class Model {
             System.out.println(e.getMessage());
         }
     }
+    
+    public static boolean checkNewRecordExists(String eusBeforeInsert, String gazBeforeInsert) {
+        String sql = "SELECT * FROM Terminoak WHERE euskaraz = ? and gazteleraz = ?";
+        
+        try (Connection conn = connect2();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // set the corresponding param
+            pstmt.setString(1, eusBeforeInsert);
+            pstmt.setString(2, gazBeforeInsert);
+            // update 
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                return true;
+                //strBuscado = rs.getString("gazteleraz");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
 
     /*
     public void terminoakInprimatuObjektuGabe() {
@@ -165,7 +191,8 @@ public class Model {
 
         String sql = "INSERT INTO Terminoak(id,euskaraz,gazteleraz) VALUES(?,?,?)";
 
-        try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (Connection conn = konektatu(); 
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, t.getId());
             pstmt.setString(2, t.getEuskaraz());
             pstmt.setString(3, t.getGazteleraz());
@@ -198,7 +225,7 @@ public class Model {
      */
     public int terminoaEzabatu(String recordToDelete) {
 
-        String sql = "DELETE FROM Terminoak WHERE euskaraz = ?";
+        String sql = "DELETE FROM Terminoak WHERE euskaraz = ? LIMIT 1";
 
         try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, recordToDelete);
@@ -210,12 +237,35 @@ public class Model {
         }
 
     }
+    
+    
+    public static String translateWord(String euskarazUserChoice) {
+        String sql = "SELECT gazteleraz FROM Terminoak WHERE euskaraz = ? LIMIT 1";     //buscar la forma de devolver SOLO EL PRIMERO que cumpla las condiciones
+        String strBuscado = "no result found";
+        
+        try (Connection conn = connect2();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // set the corresponding param
+            pstmt.setString(1, euskarazUserChoice);
+            // update 
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                strBuscado = rs.getString("gazteleraz");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        
+        return strBuscado;
+    }
+    
 
     public static ArrayList<Terminoa> registrosArrayList() {
         ArrayList<Terminoa> regTerminoak = new ArrayList<>();
         String taula = "Terminoak";
         String sql = "SELECT * FROM " + taula;
-        
+
         try (Connection conn = connect2();
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {
@@ -227,8 +277,10 @@ public class Model {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        
+
         return regTerminoak;
     }
+    
+    
 
 }

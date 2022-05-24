@@ -21,6 +21,10 @@ public class TerminoenTableModela extends AbstractTableModel {
         this.data = datosEnArrayList;
     }
     
+    public TerminoenTableModela(Terminoa desiredTerminoa) {
+        this.data.add(desiredTerminoa);
+    }
+    
     @Override
     public int getRowCount() {
         return data.size();

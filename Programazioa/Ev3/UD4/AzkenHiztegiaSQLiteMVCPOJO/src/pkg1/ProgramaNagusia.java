@@ -16,6 +16,8 @@ public class ProgramaNagusia {
  public static void main(String args[]) {
 
         View view = View.viewaSortuBistaratu();
+        
+        //System.out.println(view.ChoiceRecordToDelete.getItemCount());
 
         Model model = new Model();
 

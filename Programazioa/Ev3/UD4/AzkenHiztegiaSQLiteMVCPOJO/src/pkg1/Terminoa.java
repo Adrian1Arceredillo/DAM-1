@@ -13,6 +13,11 @@ public class Terminoa {
     private String euskaraz;
     private String gazteleraz;
 
+    
+    public Terminoa() {
+        
+    }
+    
     public Terminoa(int id, String euskaraz, String gazteleraz) {
         this.id = id;
         this.euskaraz = euskaraz;
@@ -46,8 +51,8 @@ public class Terminoa {
     @Override
     public String toString() {
 
-        String s = "\nId : " + this.id + "\nEuskera : " + euskaraz + "  \nGaztelera : " + gazteleraz + 
-                "\n------------------------------------------------------------------------------------\n";
+        String s = "\nId : " + this.id + ", Euskera : " + euskaraz + ", Gaztelera : " + gazteleraz + 
+                "\n-------------------------------------------------------------------------------------------\n";
         return s;
     }
 
