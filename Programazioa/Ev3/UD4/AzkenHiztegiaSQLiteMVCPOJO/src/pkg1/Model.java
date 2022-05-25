@@ -15,6 +15,7 @@ Other imports
 public class Model {
 
     private final String DB = "db/Hiztegia.db";
+    //public static final ArrayList<GameUserAttempts> eachAttemptUser = new ArrayList<>();
 
     private Connection konektatu() {
         // SQLite connection string
@@ -248,11 +249,12 @@ public class Model {
      */
     public int terminoaEzabatu(String recordToDelete) {
 
-        String sql = "DELETE FROM Terminoak WHERE euskaraz = ? LIMIT 1";
+        String sql = "DELETE FROM Terminoak WHERE euskaraz = ?";
 
         try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, recordToDelete);
             return pstmt.executeUpdate();
+            
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -301,5 +303,19 @@ public class Model {
 
         return regTerminoak;
     }
-
+    
+    
+    //public static ArrayList<GameUserAttempts> getAnswersUser(String originalEus, String originalGaz, String userGaz, String answerTest) {
+    /*
+    public static ArrayList<GameUserAttempts> saveAllAnswersUser(GameUserAttempts eachAnswerUser) {
+    
+        //ArrayList<GameUserAttempts> answersGame = new ArrayList<>();
+        answersGame.add(eachAnswerUser);
+        
+        return answersGame;
+    }
+    */
+    
+    
+    
 }

@@ -5,6 +5,8 @@
 package pkg1;
 
 import java.awt.CheckboxGroup;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -16,6 +18,10 @@ public class Controller implements ActionListener {
 
     private Model model;
     private View view;
+
+    //private final int numAllowedFailures = 5;
+    public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
+    public static final String ANSI_RED = "\u001B[3m";
 
     public Controller(Model model, View view) {
         this.model = model;
@@ -31,6 +37,7 @@ public class Controller implements ActionListener {
 
         View.JButtonFindSearchRecord.addActionListener(listener);   //button to ask the user for a specific record
         View.JButtonDeleteRecord.addActionListener(listener);       //button to delete the selected record
+        View.JButtonWordsOnTable.addActionListener(listener);       //button to see all the words on a table
 
         View.JRadioButtonViewOnTable.addActionListener(listener);   //radio button to check all the records on a table
 
@@ -41,6 +48,10 @@ public class Controller implements ActionListener {
         View.JButtonChooseWordsGame.addActionListener(listener);  //button to choose 5 words randomly from the table Terminoak of the database
 
         View.JButtonCheckUserTranslation.addActionListener(listener);   //button to check if the user entered the correct translation of the word selected
+
+        View.JButtonGameAnswersOnTable.addActionListener(listener);     //button to see/check the user's answers ON A TABLE
+
+        View.JButtonRestartGame.addActionListener(listener);            //button to restart the game
 
     }
 
@@ -146,6 +157,9 @@ public class Controller implements ActionListener {
                     View.JButtonInprimatu.setVisible(true);
                     View.JButtonInprimatu.setEnabled(true);
 
+                    View.JButtonWordsOnTable.setVisible(true);
+                    View.JButtonWordsOnTable.setEnabled(true);
+
                     View.JTextAreaHiztegia.setText("You must select a record to be able to delete it. ");
 
                 } else if (View.ChoiceRecordToDelete.isVisible() == true) {
@@ -162,6 +176,9 @@ public class Controller implements ActionListener {
 
                     View.JButtonInprimatu.setVisible(false);
                     View.JButtonInprimatu.setEnabled(false);
+
+                    View.JButtonWordsOnTable.setVisible(false);
+                    View.JButtonWordsOnTable.setEnabled(false);
 
                 }
 
@@ -188,10 +205,18 @@ public class Controller implements ActionListener {
                         View.JTextAreaHiztegia.setText(View.JTextAreaHiztegia.getText() + Model.getAllWords().get(i).toString());
                     }
 
-                    View.ChoiceRecordToDelete.select(0);
-                    View.ChoiceRecordToDelete.setEnabled(false);
-                    //View.ChoiceRecordToDelete.setVisible(false);
+                    view.ChoiceRecordToDelete.removeAll();
 
+                    view.ChoiceRecordToDelete.addItem("...");
+
+                    for (int j = 0; j < Model.getAllWords().size(); ++j) {
+                        view.ChoiceRecordToDelete.addItem(Model.getAllWords().get(j).getEuskaraz());
+                    }
+
+                    View.ChoiceRecordToDelete.select(0);
+                    //View.ChoiceRecordToDelete.setEnabled(false);
+
+                    /*
                     View.JButtonDeleteRecord.setVisible(false);
 
                     View.JButtonCancelDelete.setVisible(false);
@@ -202,6 +227,10 @@ public class Controller implements ActionListener {
 
                     View.JButtonInprimatu.setVisible(false);
                     View.JButtonInprimatu.setEnabled(false);
+
+                    View.JButtonWordsOnTable.setVisible(false);
+                    View.JButtonWordsOnTable.setEnabled(false);
+                     */
                 }
 
                 break;
@@ -251,27 +280,59 @@ public class Controller implements ActionListener {
                 View.JButtonInprimatu.setVisible(false);
                 View.JButtonInprimatu.setEnabled(false);
 
+                View.JButtonWordsOnTable.setVisible(false);
+                View.JButtonWordsOnTable.setEnabled(false);
+
                 View.JTextAreaHiztegia.setText("The action of deleting a record has been cancelled! Continue");
                 View.JTextAreaHiztegia.setText("Press again the 'Search' button and continue in the application! ");
 
                 break;
 
             case "VIEW TABLE":
+                /*
                 View.JDialogFilterFirstLetter.setSize(600, 600);
                 View.JDialogFilterFirstLetter.setVisible(true);
                 view.JTableFilterWords.setVisible(true);
                 View.JTableFilterWords.setModel(new TerminoenTableModela(Model.registrosArrayList()));
+                 */
 
                 View.JTableViewAllWords.setVisible(true);
                 View.JTableViewAllWords.setModel(new TerminoenTableModela(Model.registrosArrayList()));
 
                 break;
 
+            case "WORDS ON TABLE":
+                View.JTableViewAllWords.setVisible(true);
+                View.JTableViewAllWords.setModel(new TerminoenTableModela(Model.registrosArrayList()));
+
+                break;
+
             case "GENERATE":
+                view.ChoiceGameFiveWords.removeAll();
+
                 View.ChoiceGameFiveWords.addItem("...");
                 for (int i = 0; i < Model.getAllWords().size(); ++i) {
                     View.ChoiceGameFiveWords.addItem(Model.getAllWords().get(i).getEuskaraz());
                 }
+
+                if (View.ChoiceGameFiveWords.getItemCount() >= 1) {
+
+                    View.ChoiceGameFiveWords.setEnabled(true);
+
+                    System.out.println("ready to play");
+                    View.JTextFieldUserEnterTranslation.setVisible(true);
+                    View.JTextFieldUserEnterTranslation.setEditable(true);
+                    View.JTextFieldUserEnterTranslation.setEnabled(true);
+
+                    View.JButtonCheckUserTranslation.setVisible(true);
+                } else {
+                    System.out.println("press the 'Generate' button");
+                }
+
+                View.JButtonChooseWordsGame.setEnabled(false);
+                View.JButtonRestartGame.setEnabled(true);
+                View.JButtonRestartGame.setVisible(true);
+                View.JButtonCheckUserTranslation.setEnabled(true);
 
                 /*
                 for (int i = 0; i < fiveRandom.size(); ++i) {
@@ -281,25 +342,115 @@ public class Controller implements ActionListener {
                 break;
 
             case "CHECK TRANSLATION USER":
-                ArrayList<GameUserAttempts> eachAttemptUser = new ArrayList<>();
+                //ArrayList<GameUserAttempts> eachAttemptUser = new ArrayList<>();
+
+                if (View.ChoiceGameFiveWords.getSelectedIndex() == 0 || View.JTextFieldUserEnterTranslation.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Something went wrong. Please, check that the following conditions are met: \n"
+                            + " - A word in Basque is selected\n"
+                            + " - You entered a word as an answer attempt.\n", "Invalid data", JOptionPane.WARNING_MESSAGE);
+
+                    /*
+                    JOptionPane.showMessageDialog(null, "No basque word has been selected or the user \n"
+                            + "has not entered an answer. Try again! ", "Invalid data", JOptionPane.WARNING_MESSAGE);
+                     */
+                    View.ChoiceGameFiveWords.select(0);
+                    View.JTextFieldUserEnterTranslation.setText("");
+                }
 
                 if (Model.checkUserTranslation(View.ChoiceGameFiveWords.getSelectedItem(), View.JTextFieldUserEnterTranslation.getText().toLowerCase())) {
                     System.out.println("correct! ");
-                    GameUserAttempts eachTry = new GameUserAttempts(View.ChoiceGameFiveWords.getSelectedItem(),
-                            View.JTextFieldUserEnterTranslation.getText().toLowerCase(), "Correct");
-                    eachAttemptUser.add(eachTry);
-                    View.JTextAreaHiztegia.setText(eachTry.toString());
+
+                    GameUserAttempts eachTry = new GameUserAttempts(
+                            View.ChoiceGameFiveWords.getSelectedItem().toLowerCase(), //word (Basque) selected by the user on the "menu"
+                            Model.translateWord(View.ChoiceGameFiveWords.getSelectedItem()).toLowerCase(), //corresponding translation (Spanish) of the selected Basque word
+                            View.JTextFieldUserEnterTranslation.getText().toLowerCase(), //word (Spanish) entered by the user
+                            "Correct");
+
+                    View.ChoiceGameFiveWords.remove(View.ChoiceGameFiveWords.getSelectedItem());
+
+                    GameUserAttempts.eachAttemptUser.add(eachTry);
+
+                    View.JSeparator2.setBackground(Color.green);
+                    //View.JTextAreaHiztegia.setBackground(Color.green);
+                    View.JTextAreaHiztegia.setText("Correct");
+
+                    View.JTextFieldUserEnterTranslation.setText("");
 
                 } else {
                     System.out.println("wrong");
-                    GameUserAttempts eachTry = new GameUserAttempts(View.ChoiceGameFiveWords.getSelectedItem(),
-                            View.JTextFieldUserEnterTranslation.getText().toLowerCase(), "Wrong!");
-                    View.JTextAreaHiztegia.setText(eachTry.toString());
+                    GameUserAttempts eachTry = new GameUserAttempts(
+                            View.ChoiceGameFiveWords.getSelectedItem().toLowerCase(), //word (Basque) selected by the user on the "menu"
+                            Model.translateWord(View.ChoiceGameFiveWords.getSelectedItem()).toLowerCase(), //corresponding translation (Spanish) of the selected Basque word
+                            View.JTextFieldUserEnterTranslation.getText().toLowerCase(), //word (Spanish) entered by the user
+                            "Wrong!");
+
+                    GameUserAttempts.eachAttemptUser.add(eachTry);
+
+                    View.JSeparator2.setBackground(Color.red);
+                    //View.JTextAreaHiztegia.setBackground(Color.red);
+                    View.JTextAreaHiztegia.setText("Wrong");
+
+                    View.JTextFieldUserEnterTranslation.setText("");
+                }
+
+                if (View.ChoiceGameFiveWords.getItemCount() == 1 && View.ChoiceGameFiveWords.getSelectedItem().equals("...")) {
+
+                    JOptionPane.showMessageDialog(null, "Congratulations, you won! Click 'Restart' to play again. \n", "Success!", JOptionPane.WARNING_MESSAGE);
+
+                    View.JDialogFilterFirstLetter.setSize(600, 600);
+                    View.JDialogFilterFirstLetter.setVisible(true);
+                    view.JTableFilterWords.setVisible(true);
+                    View.JTableFilterWords.setModel(new UserAttemptsTableModela(GameUserAttempts.eachAttemptUser));
+
+                    System.out.println("has ganado");
+                }
+
+                //System.out.println(eachAttemptUser.toString());
+                break;
+
+            case "YOUR ANSWERS":
+                /*
+                View.JDialogFilterFirstLetter.setSize(600, 600);
+                View.JDialogFilterFirstLetter.setVisible(true);
+                view.JTableFilterWords.setVisible(true);
+                
+                View.JTableFilterWords.setModel(new UserAttemptsTableModela(Model.saveAllAnswersUser()));
+                 */
+
+                if (GameUserAttempts.eachAttemptUser.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "No response has been recorded yet! To access this information, \n"
+                            + "there must be some at least one hit attempt.", "Error", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    View.JDialogFilterFirstLetter.setSize(600, 600);
+                    View.JDialogFilterFirstLetter.setVisible(true);
+                    view.JTableFilterWords.setVisible(true);
+                    View.JTableFilterWords.setModel(new UserAttemptsTableModela(GameUserAttempts.eachAttemptUser));
+                }
+
+                System.out.println(GameUserAttempts.eachAttemptUser);
+
+                break;
+
+            case "RESET":
+                view.ChoiceGameFiveWords.removeAll();
+
+                View.ChoiceGameFiveWords.addItem("...");
+                for (int i = 0; i < Model.getAllWords().size(); ++i) {
+                    View.ChoiceGameFiveWords.addItem(Model.getAllWords().get(i).getEuskaraz());
                 }
                 
+                View.JButtonRestartGame.setEnabled(true);
+                View.JButtonRestartGame.setVisible(true);
                 
-                System.out.println(eachAttemptUser.toString());
+                //JScrollPane2
+                
+                if (View.JScrollPane2.isVisible()) {
+                    View.JDialogFilterFirstLetter.dispose();
+                    GameUserAttempts.eachAttemptUser.clear();
+                }
+                
                 break;
+
         }
 
     }

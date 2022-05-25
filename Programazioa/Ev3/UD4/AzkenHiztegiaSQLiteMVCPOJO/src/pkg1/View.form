@@ -12,7 +12,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="452" max="-2" attributes="0"/>
+                  <Component id="JScrollPane2" min="-2" pref="452" max="-2" attributes="0"/>
                   <EmptySpace pref="56" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -21,15 +21,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="376" max="-2" attributes="0"/>
+                  <Component id="JScrollPane2" min="-2" pref="376" max="-2" attributes="0"/>
                   <EmptySpace pref="91" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+        <Container class="javax.swing.JScrollPane" name="JScrollPane2">
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
 
@@ -103,7 +104,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jSeparator2" max="32767" attributes="0"/>
+                      <Component id="JSeparator2" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -139,11 +140,12 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="ChoiceRecordToDelete" min="-2" pref="190" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="JButtonInprimatu" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                                              <Component id="JButtonDeleteRecord" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                                              <Component id="JButtonTranslate" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                                              <Component id="JButtonCancelDelete" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="JButtonInprimatu" alignment="0" pref="96" max="32767" attributes="0"/>
+                                              <Component id="JButtonDeleteRecord" alignment="0" pref="96" max="32767" attributes="0"/>
+                                              <Component id="JButtonTranslate" alignment="0" pref="96" max="32767" attributes="0"/>
+                                              <Component id="JButtonCancelDelete" alignment="0" pref="96" max="32767" attributes="0"/>
+                                              <Component id="JButtonWordsOnTable" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -180,6 +182,10 @@
                               <Component id="JButtonChooseWordsGame" max="32767" attributes="0"/>
                               <Component id="JButtonCheckUserTranslation" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="JButtonGameAnswersOnTable" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="JButtonRestartGame" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -228,6 +234,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="JButtonInprimatu" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="JButtonWordsOnTable" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Component id="JButtonCancelDelete" min="-2" pref="26" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="JButtonExit" min="-2" max="-2" attributes="0"/>
@@ -238,7 +246,7 @@
                       <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jSeparator2" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="JSeparator2" min="-2" pref="22" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="JLabelMainTitle2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -247,7 +255,11 @@
                           <Component id="JLabelChooseFiveRandom" min="-2" max="-2" attributes="0"/>
                           <Component id="ChoiceGameFiveWords" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="JButtonChooseWordsGame" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="JButtonChooseWordsGame" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JButtonGameAnswersOnTable" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JButtonRestartGame" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -450,7 +462,10 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator2">
+        <Component class="javax.swing.JSeparator" name="JSeparator2">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="JLabelMainTitle2">
           <Properties>
@@ -502,6 +517,33 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Check!"/>
             <Property name="actionCommand" type="java.lang.String" value="CHECK TRANSLATION USER"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="JButtonGameAnswersOnTable">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Your answers"/>
+            <Property name="actionCommand" type="java.lang.String" value="YOUR ANSWERS"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="JButtonWordsOnTable">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Table"/>
+            <Property name="actionCommand" type="java.lang.String" value="WORDS ON TABLE"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="JButtonRestartGame">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="RESTART"/>
+            <Property name="actionCommand" type="java.lang.String" value="RESET"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>

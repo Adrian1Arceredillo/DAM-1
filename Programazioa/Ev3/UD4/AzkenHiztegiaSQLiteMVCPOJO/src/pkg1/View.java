@@ -29,6 +29,9 @@ public class View extends javax.swing.JFrame {
         JButtonInprimatu.setVisible(false);
         JButtonInprimatu.setEnabled(false);
         
+        JButtonWordsOnTable.setVisible(false);
+        JButtonWordsOnTable.setEnabled(false);
+        
         ChoiceRecordToDelete.addItem("...");
         for (int i = 0; i < Model.getAllWords().size(); ++i) {
             /*Terminoa ter1 = new Terminoa(Model.getAllWords().get(i).getId(),
@@ -41,6 +44,16 @@ public class View extends javax.swing.JFrame {
         }
 
         JTableViewAllWords.setVisible(false);
+        
+        ChoiceGameFiveWords.setEnabled(false);
+        
+        JTextFieldUserEnterTranslation.setVisible(false); JTextFieldUserEnterTranslation.setEditable(false); JTextFieldUserEnterTranslation.setEnabled(false);
+        
+        JButtonCheckUserTranslation.setVisible(false);
+        
+        JButtonRestartGame.setVisible(false);
+        
+        
         
         //JTextFieldGaztelerazTranslate.setEditable(false); 
 
@@ -56,7 +69,7 @@ public class View extends javax.swing.JFrame {
     private void initComponents() {
 
         JDialogFilterFirstLetter = new javax.swing.JDialog();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        JScrollPane2 = new javax.swing.JScrollPane();
         JTableFilterWords = new javax.swing.JTable();
         ButtonGroupFilter = new javax.swing.ButtonGroup();
         JPanelHiztegia = new javax.swing.JPanel();
@@ -80,7 +93,7 @@ public class View extends javax.swing.JFrame {
         JTableViewAllWords = new javax.swing.JTable();
         JButtonCancelDelete = new javax.swing.JButton();
         JButtonTranslate = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
+        JSeparator2 = new javax.swing.JSeparator();
         JLabelMainTitle2 = new javax.swing.JLabel();
         ChoiceGameFiveWords = new java.awt.Choice();
         JLabelChooseFiveRandom = new javax.swing.JLabel();
@@ -88,6 +101,9 @@ public class View extends javax.swing.JFrame {
         JLabelUserTranslation = new javax.swing.JLabel();
         JTextFieldUserEnterTranslation = new javax.swing.JTextField();
         JButtonCheckUserTranslation = new javax.swing.JButton();
+        JButtonGameAnswersOnTable = new javax.swing.JButton();
+        JButtonWordsOnTable = new javax.swing.JButton();
+        JButtonRestartGame = new javax.swing.JButton();
 
         JTableFilterWords.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -97,7 +113,7 @@ public class View extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(JTableFilterWords);
+        JScrollPane2.setViewportView(JTableFilterWords);
 
         javax.swing.GroupLayout JDialogFilterFirstLetterLayout = new javax.swing.GroupLayout(JDialogFilterFirstLetter.getContentPane());
         JDialogFilterFirstLetter.getContentPane().setLayout(JDialogFilterFirstLetterLayout);
@@ -105,14 +121,14 @@ public class View extends javax.swing.JFrame {
             JDialogFilterFirstLetterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JDialogFilterFirstLetterLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         JDialogFilterFirstLetterLayout.setVerticalGroup(
             JDialogFilterFirstLetterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JDialogFilterFirstLetterLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(91, Short.MAX_VALUE))
         );
 
@@ -202,6 +218,15 @@ public class View extends javax.swing.JFrame {
         JButtonCheckUserTranslation.setText("Check!");
         JButtonCheckUserTranslation.setActionCommand("CHECK TRANSLATION USER");
 
+        JButtonGameAnswersOnTable.setText("Your answers");
+        JButtonGameAnswersOnTable.setActionCommand("YOUR ANSWERS");
+
+        JButtonWordsOnTable.setText("Table");
+        JButtonWordsOnTable.setActionCommand("WORDS ON TABLE");
+
+        JButtonRestartGame.setText("RESTART");
+        JButtonRestartGame.setActionCommand("RESET");
+
         javax.swing.GroupLayout JPanelHiztegiaLayout = new javax.swing.GroupLayout(JPanelHiztegia);
         JPanelHiztegia.setLayout(JPanelHiztegiaLayout);
         JPanelHiztegiaLayout.setHorizontalGroup(
@@ -209,7 +234,7 @@ public class View extends javax.swing.JFrame {
             .addGroup(JPanelHiztegiaLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator2)
+                    .addComponent(JSeparator2)
                     .addGroup(JPanelHiztegiaLayout.createSequentialGroup()
                         .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(JPanelHiztegiaLayout.createSequentialGroup()
@@ -239,11 +264,12 @@ public class View extends javax.swing.JFrame {
                                     .addGroup(JPanelHiztegiaLayout.createSequentialGroup()
                                         .addComponent(ChoiceRecordToDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(JButtonInprimatu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(JButtonDeleteRecord, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(JButtonTranslate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(JButtonCancelDelete, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(JButtonInprimatu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                            .addComponent(JButtonDeleteRecord, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                            .addComponent(JButtonTranslate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                            .addComponent(JButtonCancelDelete, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                            .addComponent(JButtonWordsOnTable, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addGroup(JPanelHiztegiaLayout.createSequentialGroup()
                                         .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(JRadioButtonViewOnTable)
@@ -267,6 +293,10 @@ public class View extends javax.swing.JFrame {
                         .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(JButtonChooseWordsGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JButtonCheckUserTranslation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(JButtonGameAnswersOnTable)
+                        .addGap(18, 18, 18)
+                        .addComponent(JButtonRestartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -305,13 +335,15 @@ public class View extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(JButtonInprimatu)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(JButtonWordsOnTable)
+                                .addGap(13, 13, 13)
                                 .addComponent(JButtonCancelDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(JButtonExit))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JLabelMainTitle2)
                 .addGap(24, 24, 24)
@@ -319,7 +351,10 @@ public class View extends javax.swing.JFrame {
                     .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(JLabelChooseFiveRandom)
                         .addComponent(ChoiceGameFiveWords, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(JButtonChooseWordsGame))
+                    .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(JButtonChooseWordsGame)
+                        .addComponent(JButtonGameAnswersOnTable)
+                        .addComponent(JButtonRestartGame)))
                 .addGap(18, 18, 18)
                 .addGroup(JPanelHiztegiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLabelUserTranslation)
@@ -420,9 +455,12 @@ public class View extends javax.swing.JFrame {
     public static javax.swing.JButton JButtonDeleteRecord;
     javax.swing.JButton JButtonExit;
     public static javax.swing.JButton JButtonFindSearchRecord;
+    public static javax.swing.JButton JButtonGameAnswersOnTable;
     public static javax.swing.JButton JButtonInprimatu;
+    public static javax.swing.JButton JButtonRestartGame;
     public static javax.swing.JButton JButtonTranslate;
     public static javax.swing.JButton JButtonTxertatu;
+    public static javax.swing.JButton JButtonWordsOnTable;
     public static javax.swing.JDialog JDialogFilterFirstLetter;
     public static javax.swing.JLabel JLabelChooseFiveRandom;
     public static javax.swing.JLabel JLabelEusInsertNew;
@@ -432,6 +470,8 @@ public class View extends javax.swing.JFrame {
     public static javax.swing.JLabel JLabelUserTranslation;
     public static javax.swing.JPanel JPanelHiztegia;
     public static javax.swing.JRadioButton JRadioButtonViewOnTable;
+    public static javax.swing.JScrollPane JScrollPane2;
+    public static javax.swing.JSeparator JSeparator2;
     public static javax.swing.JTable JTableFilterWords;
     public static javax.swing.JTable JTableViewAllWords;
     public static javax.swing.JTextArea JTextAreaHiztegia;
@@ -440,9 +480,7 @@ public class View extends javax.swing.JFrame {
     public static javax.swing.JTextField JTextFieldUserEnterTranslation;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }
