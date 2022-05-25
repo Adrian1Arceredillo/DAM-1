@@ -52,7 +52,7 @@ public class View extends javax.swing.JFrame {
         JButtonCheckUserTranslation.setVisible(false);
         
         JButtonRestartGame.setVisible(false);
-        
+                
         
         
         //JTextFieldGaztelerazTranslate.setEditable(false); 
