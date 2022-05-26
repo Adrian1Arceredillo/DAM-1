@@ -5,6 +5,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="diyGaragePythonOOP" />
+    <orderEntry type="module" module-name="RepasoExamenEv3" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
