@@ -4,6 +4,10 @@
  */
 package pkg1;
 
+import myClasses.UserAttemptsTableModela;
+import myClasses.TerminoenTableModela;
+import myClasses.Terminoa;
+import myClasses.GameUserAttempts;
 import java.awt.CheckboxGroup;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,6 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import pkg1.Model;
 import pkg1.View;
@@ -22,7 +27,12 @@ public class Controller implements ActionListener {
 
     //private final int numAllowedFailures = 5;
     public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
+    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
+    public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
+
     public static final String ANSI_RED = "\u001B[3m";
+    public static final String ANSI_RED2 = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
 
     public Controller(Model model, View view) {
         this.model = model;
@@ -161,7 +171,7 @@ public class Controller implements ActionListener {
                     View.JButtonWordsOnTable.setVisible(true);
                     View.JButtonWordsOnTable.setEnabled(true);
 
-                    View.JTextAreaHiztegia.setText("You must select a record to be able to delete it. ");
+                    //View.JTextAreaHiztegia.setText("You must select a record to be able to delete it. ");
 
                 } else if (View.ChoiceRecordToDelete.isVisible() == true) {
                     View.ChoiceRecordToDelete.setEnabled(false);
@@ -366,6 +376,7 @@ public class Controller implements ActionListener {
                             Model.translateWord(View.ChoiceGameFiveWords.getSelectedItem()).toLowerCase(), //corresponding translation (Spanish) of the selected Basque word
                             View.JTextFieldUserEnterTranslation.getText().toLowerCase(), //word (Spanish) entered by the user
                             "Correct");
+                    //AnswerCheckGame.Correct);
 
                     View.ChoiceGameFiveWords.remove(View.ChoiceGameFiveWords.getSelectedItem());
 
@@ -384,6 +395,7 @@ public class Controller implements ActionListener {
                             Model.translateWord(View.ChoiceGameFiveWords.getSelectedItem()).toLowerCase(), //corresponding translation (Spanish) of the selected Basque word
                             View.JTextFieldUserEnterTranslation.getText().toLowerCase(), //word (Spanish) entered by the user
                             "Wrong!");
+                    //AnswerCheckGame.Wrong);
 
                     GameUserAttempts.eachAttemptUser.add(eachTry);
 
@@ -424,12 +436,21 @@ public class Controller implements ActionListener {
                 } else {
                     View.JDialogFilterFirstLetter.setSize(600, 600);
                     View.JDialogFilterFirstLetter.setVisible(true);
-                    view.JTableFilterWords.setVisible(true);
+                    View.JTableFilterWords.setVisible(true);
                     View.JTableFilterWords.setModel(new UserAttemptsTableModela(GameUserAttempts.eachAttemptUser));
+
+                    
+
+                    //View.JTableFilterWords.setbgetColumnName(2);
                 }
 
+                /*
+                System.out.println(ANSI_PURPLE_BACKGROUND + "RESPONSE HISTORY:" + ANSI_RED + "\n" + "\n----------------");
+                System.out.println(ANSI_GREEN_BACKGROUND + "Correct" + ANSI_GREEN + "\n" + "\n----------------");
+                System.out.println("RESPONSE HISTORY:");
                 System.out.println(GameUserAttempts.eachAttemptUser);
-
+                 */
+                //View.JListWrong = new List(wrongAttempts);
                 break;
 
             case "RESET":
@@ -439,17 +460,16 @@ public class Controller implements ActionListener {
                 for (int i = 0; i < Model.getAllWords().size(); ++i) {
                     View.ChoiceGameFiveWords.addItem(Model.getAllWords().get(i).getEuskaraz());
                 }
-                
+
                 View.JButtonRestartGame.setEnabled(true);
                 View.JButtonRestartGame.setVisible(true);
-                
+
                 //JScrollPane2
-                
                 if (View.JScrollPane2.isVisible()) {
                     View.JDialogFilterFirstLetter.dispose();
                     GameUserAttempts.eachAttemptUser.clear();
                 }
-                
+
                 break;
 
         }

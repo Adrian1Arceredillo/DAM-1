@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg1;
+package myClasses;
 
+import myClasses.GameUserAttempts;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
@@ -42,8 +43,13 @@ public class UserAttemptsTableModela extends AbstractTableModel {
         } else if (columnIndex == 3) {
             return answersUserGame.get(rowIndex).getAnswer();
         }
-        
+
         return null;
+    }
+
+    @Override
+    public String getColumnName(int col) {
+        return zutabeIzenak[col];
     }
 
 }

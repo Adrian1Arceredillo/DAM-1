@@ -1,5 +1,6 @@
 package pkg1;
 
+import myClasses.Terminoa;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -66,8 +67,6 @@ public class Model {
 
         return allWords;
     }
-
-    
 
     public void terminoakInprimatu() {
         String taula = "Terminoak";
@@ -141,8 +140,7 @@ public class Model {
         }
         return false;
     }
-    
-    
+
     public static boolean checkUserTranslation(String originalEuskaraz, String userGazteleraz) {
         String sql = "SELECT * FROM Terminoak WHERE euskaraz = ? and gazteleraz = ?";
 
@@ -163,7 +161,7 @@ public class Model {
         }
         return false;
     }
-
+    
     /*
     public void terminoakInprimatuObjektuGabe() {
         String taula = "Terminoak";
@@ -254,7 +252,6 @@ public class Model {
         try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, recordToDelete);
             return pstmt.executeUpdate();
-            
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -303,8 +300,7 @@ public class Model {
 
         return regTerminoak;
     }
-    
-    
+
     //public static ArrayList<GameUserAttempts> getAnswersUser(String originalEus, String originalGaz, String userGaz, String answerTest) {
     /*
     public static ArrayList<GameUserAttempts> saveAllAnswersUser(GameUserAttempts eachAnswerUser) {
@@ -314,8 +310,5 @@ public class Model {
         
         return answersGame;
     }
-    */
-    
-    
-    
+     */
 }
