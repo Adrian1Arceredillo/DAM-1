@@ -32,6 +32,9 @@ public class View extends javax.swing.JFrame {
         JButtonWordsOnTable.setVisible(false);
         JButtonWordsOnTable.setEnabled(false);
         
+        JRadioButtonViewOnTable.setVisible(false);
+        JRadioButtonViewOnTable.setEnabled(false);
+        
         ChoiceRecordToDelete.addItem("...");
         for (int i = 0; i < Model.getAllWords().size(); ++i) {
             /*Terminoa ter1 = new Terminoa(Model.getAllWords().get(i).getId(),
